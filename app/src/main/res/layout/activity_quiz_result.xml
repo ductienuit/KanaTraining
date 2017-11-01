@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nhombabon.kanatraining.QuizResultActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/bottom_layer"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:textColor="@color/quizColor"
+            android:text="TIME UP"/>
+
+
+        <com.github.pavlospt.CircleView
+            android:id="@+id/your_best_score"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            app:cv_titleSubtitleSpace="40"
+            app:cv_fillColor="@color/colorWhite"
+            app:cv_strokeColorValue="@color/colorPrimaryDark"
+            app:cv_backgroundColorValue="@color/colorPrimaryDark"
+            app:cv_titleColor="@color/colorAccent"
+            app:cv_titleSize="@dimen/_25sdp"
+            app:cv_titleText="85%"
+            app:cv_subtitleSize="@dimen/_12sdp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/player_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/quizColor"
+            android:text="YOUR SCORE"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:background="@color/colorIcons"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_16sdp"
+            android:layout_marginRight="@dimen/_16sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingLeft="@dimen/_8sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/quizColor"
+                android:text="Bonus Point:"/>
+
+            <TextView
+                android:id="@+id/bonus_point"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:gravity="right"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/quizColor"
+                android:text="80 points"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:background="@color/colorIcons"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bottom_layer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/try_again"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TRY AGAIN"
+            android:textColor="@color/colorWhite"
+            android:layout_marginRight="@dimen/_4sdp"
+            android:background="@color/colorAccent"/>
+
+        <Button
+            android:id="@+id/new_quiz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NEW QUIZ"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="@dimen/_4sdp"
+            android:background="@color/colorAccent"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

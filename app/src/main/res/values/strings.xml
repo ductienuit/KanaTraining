@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Quiz Admin</string>
+    <string name="first_title">Complete Quiz</string>
+    <string name="first_description">Learning made easy through fun</string>
+    <string name="second_description">Compete with your peers and show off with your result</string>
+    <string name="third_description">Educative and addictive quiz game for you</string>
+
+    <string name="facebook_app_id">1542894162412221</string>
+
+
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+    <string name="already_registered_login">Already registered! login</string>
+    <string name="no_registration">If used without registration your score will not be stored</string>
+    <string name="rule_one">1. Answer the question as fast as you can to save time</string>
+    <string name="rule_two">2. You have a maximum of 15 seconds to answer each question</string>
+    <string name="rule_three">3. You have 3 lives and after that you loss the quiz game. See testing the quiz also</string>
+    <string name="rule_four">4. For 10 correct answers in a row you will gain extra bonus life.</string>
+    <string name="rule_five">5. If you finish a particular quiz before the allocated time you will gain extra point going into a new quiz game</string>
+    <string name="continue_button">CONTINUE</string>
+    <string name="home">Home</string>
+    <string name="ladder_board">Ladder Board</string>
+    <string name="settings">Settings</string>
+
+    <string name="language_prompt">Choose a language</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="has_registered_login">Has registered. Login</string>
+
+    <string-array name="language_arrays">
+        <item>English</item>
+        <item>French</item>
+        <item>Spain</item>
+        <item>German</item>
+        <item>Korean</item>
+        <item>Hindu</item>
+    </string-array>
+    <string name="title_activity_home">General Quiz</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="quiz_mart">Quiz Topics</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sound">Sound</string>
+    <string name="music">Music</string>
+    <string name="language">Language</string>
+
+</resources>

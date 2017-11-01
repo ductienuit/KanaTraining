@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_60sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_24sdp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/selected_quiz_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/selected_quiz_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_9sdp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Health"
+        android:layout_marginTop="@dimen/_4sdp"/>
+
+</LinearLayout>

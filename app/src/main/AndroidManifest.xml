@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nhombabon.kanatraining">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.nhombabon.kanatraining.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.nhombabon.kanatraining.LoginOptionActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeFullScreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.nhombabon.kanatraining.LoginActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeFullScreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.nhombabon.kanatraining.SignUpActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeFullScreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.nhombabon.kanatraining.HomeActivity"
+            android:label="@string/title_activity_home" />
+        <activity
+            android:name="com.nhombabon.kanatraining.QuizHomeActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeFullScreen"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.nhombabon.kanatraining.QuizResultActivity" />
+        <activity android:name="com.nhombabon.kanatraining.ProfileActivity" />
+        <activity android:name="com.nhombabon.kanatraining.QuizCategoryActivity" />
+        <activity android:name="com.nhombabon.kanatraining.HelpActivity"></activity>
+    </application>
+
+</manifest>

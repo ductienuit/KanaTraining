@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_4sdp"
+    android:layout_marginBottom="@dimen/_4sdp">
+
+    <ImageView
+        android:id="@+id/selected_quiz_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/history"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/selected_quiz_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_12sdp"
+        android:layout_gravity="bottom"
+        android:alpha="0.7"
+        android:text="Geography"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/_12sdp"
+        android:gravity="center"
+        android:background="@color/black"/>
+
+</FrameLayout>

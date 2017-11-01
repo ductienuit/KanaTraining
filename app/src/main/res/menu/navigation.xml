@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/quiz_mart"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/quiz_mart" />
+
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"/>
+
+
+    <item
+        android:id="@+id/ladder_board"
+        android:title="@string/ladder_board"
+        android:icon="@drawable/trophy"/>
+
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"/>
+
+</menu>
