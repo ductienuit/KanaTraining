@@ -1,5 +1,5 @@
 package com.nhombabon.kanatraining;
-
+//Test commit
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
