@@ -40,7 +40,9 @@ public class LoginActivity extends AppCompatActivity {
         signInLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent signInIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+//                Intent signInIntent = new Intent(LoginActivity.this, SignUpActivity.class);
+//                startActivity(signInIntent);
+                Intent signInIntent = new Intent(LoginActivity.this, QuizSelectListActivity.class);
                 startActivity(signInIntent);
             }
         });

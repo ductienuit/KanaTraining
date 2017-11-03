@@ -58,7 +58,7 @@ public class AppBaseActivity extends Activity implements Animation.AnimationList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(3);
-        //mTextColorSpan = new TextAppearanceSpan(this,  );
+        //mTextColorSpan = new TextAppearanceSpan(this, );
     }
 
     class closeProgressDialog implements DialogInterface.OnDismissListener {

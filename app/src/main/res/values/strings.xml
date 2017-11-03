@@ -54,5 +54,19 @@
     <string name="music">Music</string>
     <string name="language">Language</string>
     <string name="activity_animation_duration">100</string>
+    <string name="IllustTop_ViewName">Kana Training</string>
+    <string name="QuizQuestion_Title">Select rows</string>
+    <string name="QuizQuestion_Button">Ready, Go!</string>
+    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>
+    ;
+    <string name="FONT_NAME_FIRA_EXTRA">"FiraSans-ExtraBoldItalic.otf"</string>;
+    <string name="FONT_NAME_FIRA_LIGHT"> "FiraSans-LightItalic.otf"</string>;
+    <string name="FONT_NAME_FIRA_ULTRA">"FiraSans-UltraItalic.otf"</string>;
+    <string name="FONT_NAME_KYOKASHO">"IwaTxtPro-Db_app.otf"</string>;
+    <string name="FONT_NAME_LETTER">"LetterGothicStd-Slanted.otf"</string>;
 
+    <string name="Quiz_Question1">Read the Hiragana</string>
+    <string name="Quiz_Question2">Choose the Hiragana</string>
+    <string name="Quiz_Question3">Listen &amp; Choose</string>
+    <string name="Quiz_Question4">Similar Hiragana</string>
 </resources>
