@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -14,5 +14,39 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+    <style name="AppBaseTheme">
+    </style>
+    <style name="AppTheme2">
+    </style>
+    <style name="Animation">
+    </style>
+    <!--<style name="Animation.Activity">-->
+        <!--<item name="act_open_rotate_enter">@anim/act_open_rotate_enter</item>-->
+        <!--<item name="act_open_rotate_exit">@anim/act_open_rotate_exit</item>-->
+        <!--<item name="act_close_rotate_enter">@anim/act_close_rotate_enter</item>-->
+        <!--<item name="act_close_rotate_exit">@anim/act_close_rotate_exit</item>-->
+    <!--</style>-->
+    <style name="Animation."
+        >
+        <item name="android:windowEnterAnimation">@anim/act_close_rotate_enter</item>
+    </style>
+
+    <!--<style name="DescriptionText">-->
+        <!--<item name="DescriptionText">#00ffff</item>-->
+    <!--</style>-->
+
+    <!--<style name="RotateTheme">-->
+        <!--<item name="RotateTheme">@style/Animation.Activity</item>-->
+    <!--</style>-->
+    <style name="Theme_ThemeTransparent">
+        <item name="android:color">#106000</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <style name="Theme.ThemeTransparentDialog" parent="android:Theme" />
+    <!--<style name="Theme_ThemeTransparentDialog">-->
+        <!--<item name="Color">?unknown_ref: 106000d</item>-->
+        <!--<item name="State">true</item>-->
+    <!--</style>-->
 
 </resources>

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.nhombabon.kanatraining.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,32 +17,33 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.nhombabon.kanatraining.LoginOptionActivity"
+            android:name=".LoginOptionActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.nhombabon.kanatraining.LoginActivity"
+            android:name=".LoginActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.nhombabon.kanatraining.SignUpActivity"
+            android:name=".SignUpActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name="com.nhombabon.kanatraining.HomeActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_home" />
         <activity
-            android:name="com.nhombabon.kanatraining.QuizHomeActivity"
+            android:name=".QuizHomeActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name="com.nhombabon.kanatraining.QuizResultActivity" />
-        <activity android:name="com.nhombabon.kanatraining.ProfileActivity" />
-        <activity android:name="com.nhombabon.kanatraining.QuizCategoryActivity" />
-        <activity android:name="com.nhombabon.kanatraining.HelpActivity"></activity>
+        <activity android:name=".QuizResultActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".QuizCategoryActivity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".AppBaseActivity"></activity>
     </application>
 
 </manifest>
