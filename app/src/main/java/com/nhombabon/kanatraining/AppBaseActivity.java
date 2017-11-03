@@ -2,15 +2,47 @@ package com.nhombabon.kanatraining;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory.Options;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TextAppearanceSpan;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.nhombabon.kanatraining.view.AppTransparentDialog;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 
-//public class AppBaseActivity extends Activity implements Animation.AnimationListener {
-public class AppBaseActivity extends Activity  {
+import jp.co.cyberagent.android.gpuimage.GPUImage;
+import jp.co.cyberagent.android.gpuimage.GPUImageGaussianBlurFilter;
+import jp.co.cyberagent.android.gpuimage.GPUImageNormalBlendFilter;
+
+import static android.graphics.Bitmap.Config.RGB_565;
+import static android.graphics.BitmapFactory.decodeResource;
+import static android.graphics.BitmapFactory.decodeStream;
+
+public class AppBaseActivity extends Activity implements Animation.AnimationListener {
     //Sets the text color, size, style, and typeface to match a TextAppearance resource.
     protected static TextAppearanceSpan mTextColorSpan;
     //Style of words, bold, itali,underline
@@ -22,14 +54,14 @@ public class AppBaseActivity extends Activity  {
     //DialogShow like Dialog in c#
     protected DialogInterface mProgressDialog;
 
-/*
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(3);
         //mTextColorSpan = new TextAppearanceSpan(this,  );
     }
 
-    class closeProgressDialog implements OnDismissListener {
+    class closeProgressDialog implements DialogInterface.OnDismissListener {
         closeProgressDialog() {
         }
 
@@ -96,7 +128,7 @@ public class AppBaseActivity extends Activity  {
             if (id == 0) {
                 throw new FileNotFoundException("Not Found - " + fileName);
             }
-            Options options = new BitmapFactory.Options();
+            Options options = new Options();
             options.inPurgeable = true;
             options.inPreferredConfig = RGB_565;
             view.setBackground(new BitmapDrawable(getResources(), decodeResource(getResources(), id, options)));
@@ -269,5 +301,5 @@ public class AppBaseActivity extends Activity  {
             e.printStackTrace();
         }
         return p;
-    }*/
+    }
 }
