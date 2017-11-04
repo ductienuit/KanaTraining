@@ -1,5 +1,6 @@
 package com.nhombabon.kanatraining;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewCompat;
 import android.util.Log;
@@ -121,7 +122,9 @@ public class QuizSelectListActivity extends AppBaseActivity {
     }
 
     private void pickupQuizData() {
-        int i;
+        int i=0;
+        /*Must to add android:name"Common" to AndroidManifest.xml
+        because Common inherit class Application*/
         Common common = (Common) getApplication();
         if (common.mColKeyList == null) {
             common.init();
@@ -210,15 +213,15 @@ public class QuizSelectListActivity extends AppBaseActivity {
             pointArray[i] = 0;
         }
         common.mSelectedList = this.mSelectedList;
-/*        Intent it = new Intent();
+        Intent it = new Intent();
         it.putExtra(AppConfig.RESULT_TIME, 0);
         it.putExtra(AppConfig.RESULT_POINT_LIST, pointArray);
         it.putExtra(AppConfig.RESULT_QUIZ_TYPE, this.mQuizType);
         it.putExtra(AppConfig.RESULT_ALL_TARGET_LIST, targetList);
         it.putExtra(AppConfig.RESULT_QUIZ_WORD_LIST, quizWordList);
-        it.setClass(this, QuizMainActivity.class);
-        it.setFlags(67108864);
-        startActivity(it);*/
+        //it.setClass(this, QuizMainActivity.class);
+        it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //startActivity(it);
     }
 }
 

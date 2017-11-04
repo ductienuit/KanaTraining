@@ -2,7 +2,6 @@ package com.nhombabon.kanatraining;
 
 import android.app.Application;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.util.Log;
 
 import java.io.IOException;
@@ -11,7 +10,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/*Load data from crv and take it to struct data*/
+/**
+ * Created by DucTien on 04/11/2017.
+ * Load data from crv and take it to struct data
+ */
+
 public class Common extends Application {
     private static final String TAG = "Common";
 
@@ -20,7 +23,7 @@ public class Common extends Application {
     public ArrayList<String> mCharList;
     public HashMap<String, ArrayList<String[]>> mColDataList;
     public ArrayList<String> mColKeyList;
-    Editor mEditor;
+    SharedPreferences.Editor mEditor;
     SharedPreferences mPrefs;
     public boolean[] mSelectedList;
 

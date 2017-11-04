@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quiz Admin</string>
+    <string name="app_name">Kana Training</string>
     <string name="first_title">Complete Quiz</string>
     <string name="first_description">Learning made easy through fun</string>
     <string name="second_description">Compete with your peers and show off with your result</string>
@@ -57,16 +57,27 @@
     <string name="IllustTop_ViewName">Kana Training</string>
     <string name="QuizQuestion_Title">Select rows</string>
     <string name="QuizQuestion_Button">Ready, Go!</string>
-    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>
-    ;
+    <string name="QuizResult_Time">Time</string>
+    <string name="QuizStopPop_Guide">Quit and return to top</string>
+
+    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>    ;
     <string name="FONT_NAME_FIRA_EXTRA">"FiraSans-ExtraBoldItalic.otf"</string>;
     <string name="FONT_NAME_FIRA_LIGHT"> "FiraSans-LightItalic.otf"</string>;
     <string name="FONT_NAME_FIRA_ULTRA">"FiraSans-UltraItalic.otf"</string>;
     <string name="FONT_NAME_KYOKASHO">"IwaTxtPro-Db_app.otf"</string>;
     <string name="FONT_NAME_LETTER">"LetterGothicStd-Slanted.otf"</string>;
 
+    <string name="no_Button">No</string>
+    <string name="yes_Button">Yes</string>
+    <string name="timeStart">0.00</string>
+    <string name="halfscore">5/10</string>
+
     <string name="Quiz_Question1">Read the Hiragana</string>
     <string name="Quiz_Question2">Choose the Hiragana</string>
     <string name="Quiz_Question3">Listen &amp; Choose</string>
     <string name="Quiz_Question4">Similar Hiragana</string>
+    <string name="QuizQuestion1_ViewName">Read the Hiragana</string>
+    <string name="QuizQuestion2_ViewName">Choose the Hiragana</string>
+    <string name="QuizQuestion3_ViewName">Listen &amp; Choose</string>
+    <string name="QuizQuestion4_ViewName">Similar Hiragana</string>
 </resources>
