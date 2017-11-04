@@ -46,6 +46,7 @@
         <activity android:name=".HelpActivity" />
         <activity android:name=".AppBaseActivity" />
         <activity android:name=".QuizSelectListActivity" />
+        <activity android:name=".QuizMainActivity"></activity>
     </application>
 
 </manifest>

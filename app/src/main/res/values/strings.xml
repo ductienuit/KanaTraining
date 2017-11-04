@@ -60,7 +60,8 @@
     <string name="QuizResult_Time">Time</string>
     <string name="QuizStopPop_Guide">Quit and return to top</string>
 
-    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>    ;
+    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>
+    ;
     <string name="FONT_NAME_FIRA_EXTRA">"FiraSans-ExtraBoldItalic.otf"</string>;
     <string name="FONT_NAME_FIRA_LIGHT"> "FiraSans-LightItalic.otf"</string>;
     <string name="FONT_NAME_FIRA_ULTRA">"FiraSans-UltraItalic.otf"</string>;
