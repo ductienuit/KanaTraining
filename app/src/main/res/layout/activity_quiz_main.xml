@@ -15,8 +15,9 @@
         android:orientation="vertical"
         android:paddingBottom="@dimen/_20sdp">
         <include layout="@layout/navi_bar_black" />
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:background="@drawable/btn_frame01"
@@ -46,6 +47,7 @@
                 android:textSize="22sp" />
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/question_number"
             android:layout_width="wrap_content"
@@ -157,9 +159,9 @@
         <RelativeLayout
             android:id="@+id/quiestions_area_bg"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
+            android:layout_height="@dimen/_130sdp"
+            android:layout_gravity="center_horizontal"
+            >
             <ImageView
                 android:id="@+id/questions_listen"
                 android:layout_width="wrap_content"
@@ -173,65 +175,64 @@
                 android:id="@+id/questions_area_jp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:text="へ"
                 android:textColor="@color/black"
-                android:textSize="110sp"/>
+                android:textSize="135sp" />
 
         </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/choice_area"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:layout_height="@dimen/_100sdp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
-                >
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:id="@+id/left_questions_button_base"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
                     android:clickable="true"
                     android:onClick="ClickQuestionsButton"
                     android:tag="0">
 
                     <TextView
                         android:id="@+id/left_questions_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
                         android:background="@drawable/btn_cycle02"
-                        android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                        android:gravity="center"
                         android:tag="0"
                         android:text="he"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="40sp" />
-
                 </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/right_questions_button_base"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
                     android:clickable="true"
                     android:onClick="ClickQuestionsButton"
                     android:tag="1">
 
                     <TextView
                         android:id="@+id/right_questions_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_18sdp"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
                         android:background="@drawable/btn_cycle02"
-                        android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                        android:gravity="center"
                         android:tag="1"
                         android:text="ho"
                         android:textAlignment="center"
@@ -245,25 +246,24 @@
 
         <RelativeLayout
             android:id="@+id/bottom_questions_button_base"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_gravity="center_horizontal"
             android:clickable="true"
             android:onClick="ClickQuestionsButton"
-            android:layout_gravity="center_horizontal"
             android:tag="2">
 
             <TextView
                 android:id="@+id/bottom_questions_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
                 android:background="@drawable/btn_cycle02"
-                android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                android:gravity="center"
                 android:tag="2"
-                android:text="hi"
+                android:text="w(o)"
+                android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="40sp"
-                android:textAlignment="center"/>
+                android:textSize="40sp" />
         </RelativeLayout>
 
     </LinearLayout>
@@ -418,5 +418,13 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/quiz_main_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:onClick="clickCover"
+        android:visibility="gone" />
 
 </RelativeLayout>

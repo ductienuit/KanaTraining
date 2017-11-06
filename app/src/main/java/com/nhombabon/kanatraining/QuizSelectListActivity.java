@@ -219,9 +219,9 @@ public class QuizSelectListActivity extends AppBaseActivity {
         it.putExtra(AppConfig.RESULT_QUIZ_TYPE, this.mQuizType);
         it.putExtra(AppConfig.RESULT_ALL_TARGET_LIST, targetList);
         it.putExtra(AppConfig.RESULT_QUIZ_WORD_LIST, quizWordList);
-        //it.setClass(this, QuizMainActivity.class);
+        it.setClass(this, QuizMainActivity.class);
         it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        //startActivity(it);
+        startActivity(it);
     }
 }
 
