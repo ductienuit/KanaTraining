@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_underline"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1.0"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_type_en"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="he"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/text_type_catch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="head"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/quiz_answer_base_imgbase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_circle04_m">
+
+            <ImageView
+                android:id="@+id/quiz_answer_base_image"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/he_1" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_type_jp"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_circle06_m"
+            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:text="へ"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="90dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

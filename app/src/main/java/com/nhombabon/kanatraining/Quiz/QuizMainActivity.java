@@ -1,4 +1,4 @@
-package com.nhombabon.kanatraining;
+package com.nhombabon.kanatraining.Quiz;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -17,6 +17,12 @@ import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.nhombabon.kanatraining.AppBaseActivity;
+import com.nhombabon.kanatraining.AppConfig;
+import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.MainActivity;
+import com.nhombabon.kanatraining.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -350,7 +356,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     private void loadVoice() {
         String[] data = (String[]) ((Common) getApplication()).mCharDataList.get(this.mNowChar);
         if (this.mQuizType == 2) {
-            String filename = "voice/" + data[2] + ".ogg";
+            String filename = "hiragana/voice/" + data[2] + ".ogg";
             Log.i("", "Voice File: " + filename);
             AssetManager am = getAssets();
             this.mSoundId = -1;
@@ -401,7 +407,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         int column = Integer.parseInt(data[1]);
         switch (this.mQuizType) {
             case 0:
-                loadAssetImage("ch_img/" + data[2] + "_1.png", this.mHintImageView);
+                loadAssetImage("hiragana/ch_img/" + data[2] + "_1.png", this.mHintImageView);
                 this.mHintImageView.setVisibility(View.VISIBLE);
                 loadResBgImage(String.format("bg_cycle%02d", new Object[]{Integer.valueOf(column)}), this.mHintImageView);
                 this.mHintDescView.setVisibility(View.GONE);
@@ -551,7 +557,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             this.mPointArray[this.mNowIndex] = 1;
             am = getAssets();
             this.mSeSoundId = -1;
-            player = getAssetsMediaFile(getResources(), "music/crrect.ogg");
+            player = getAssetsMediaFile(getResources(), "hiragana/music/crrect.ogg");
             player.setOnCompletionListener(new C01443());
             player.start();
             this.mHandler.postDelayed(new C01454(), 1000);
@@ -562,7 +568,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         this.mMissView.setVisibility(View.VISIBLE);
         this.mMissCount++;
         am = getAssets();
-        player = getAssetsMediaFile(getResources(), "music/miss.ogg");
+        player = getAssetsMediaFile(getResources(), "hiragana/music/miss.ogg");
         player.setOnCompletionListener(new C01465());
         player.start();
         this.mHandler.postDelayed(new Runnable() {

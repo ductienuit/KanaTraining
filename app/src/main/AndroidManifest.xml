@@ -45,8 +45,9 @@
         <activity android:name=".QuizCategoryActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".AppBaseActivity" />
-        <activity android:name=".QuizSelectListActivity" />
-        <activity android:name=".QuizMainActivity"></activity>
+        <activity android:name=".Quiz.QuizSelectListActivity" />
+        <activity android:name=".Quiz.QuizMainActivity" />
+        <activity android:name=".Quiz.QuizAnswerSimilarActivity" />
     </application>
 
 </manifest>

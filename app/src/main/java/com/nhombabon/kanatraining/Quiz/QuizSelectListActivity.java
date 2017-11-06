@@ -1,4 +1,4 @@
-package com.nhombabon.kanatraining;
+package com.nhombabon.kanatraining.Quiz;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,11 @@ import android.support.v4.view.ViewCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.nhombabon.kanatraining.AppBaseActivity;
+import com.nhombabon.kanatraining.AppConfig;
+import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
