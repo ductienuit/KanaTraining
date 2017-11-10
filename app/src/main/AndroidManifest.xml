@@ -48,6 +48,7 @@
         <activity android:name=".Quiz.QuizSelectListActivity" />
         <activity android:name=".Quiz.QuizMainActivity" />
         <activity android:name=".Quiz.QuizAnswerSimilarActivity" />
+        <activity android:name=".Quiz.QuizAnswerActivity"></activity>
     </application>
 
 </manifest>
