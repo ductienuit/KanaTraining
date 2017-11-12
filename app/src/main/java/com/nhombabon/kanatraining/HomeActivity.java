@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.nhombabon.kanatraining.fragment.AlphabetFragment;
 import com.nhombabon.kanatraining.fragment.HomeFragment;
 import com.nhombabon.kanatraining.fragment.LadderBoardFragment;
 import com.nhombabon.kanatraining.fragment.QuizTopicsFragment;
@@ -39,6 +40,9 @@ public class HomeActivity extends AppCompatActivity {
                     break;
                 case R.id.settings:
                     selectedFragment = new SettingsFragment();
+                    break;
+                case R.id.alphabet:
+                    selectedFragment= new AlphabetFragment();
                     break;
             }
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
