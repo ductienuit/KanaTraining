@@ -110,7 +110,7 @@ public class AppBaseActivity extends Activity implements Animation.AnimationList
         if (this.mFaceSave.get(fontName) != null) {
             face = (Typeface) this.mFaceSave.get(fontName);
         } else {
-            face = Typeface.createFromAsset(getAssets(), "hiragana/font/" + fontName);
+            face = Typeface.createFromAsset(getAssets(), "font/" + fontName);
             this.mFaceSave.put(fontName, face);
         }
         v.setTypeface(face);
