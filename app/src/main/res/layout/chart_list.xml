@@ -50,7 +50,7 @@
                     android:layout_weight="1.0">
                     <TextView android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:id="@+id/chart_input_text_a"
                         android:background="@drawable/bg_circle01_s"
                         android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
                     android:layout_weight="1.0">
                     <TextView android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:id="@+id/chart_input_text_i"
                         android:background="@drawable/bg_circle02_s"
                         android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content" android:layout_weight="1.0">
                     <TextView android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:id="@+id/chart_input_text_u"
                         android:background="@drawable/bg_circle03_s"
                         android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                     android:layout_weight="1.0">
                     <TextView android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:id="@+id/chart_input_text_e"
                         android:background="@drawable/bg_circle04_s"
                         android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                     android:layout_weight="1.0">
                     <TextView android:textSize="18sp"
                         android:textColor="@color/white"
-                        android:gravity="center_horizontal"
+                        android:gravity="center"
                         android:id="@+id/chart_input_text_o"
                         android:background="@drawable/bg_circle05_s"
                         android:layout_width="wrap_content"

@@ -22,7 +22,7 @@
     <item
         android:id="@+id/alphabet"
         android:title="@string/alphabet"
-        android:icon="@drawable/trophy"/>
+        android:icon="@drawable/tab_types_active"/>
 
     <item
         android:id="@+id/settings"

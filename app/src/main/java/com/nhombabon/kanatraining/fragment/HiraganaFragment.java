@@ -1,6 +1,7 @@
 package com.nhombabon.kanatraining.fragment;
 
 import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -99,15 +100,6 @@ public class HiraganaFragment extends Fragment {
             e.printStackTrace();
         }
 
-//        List<String[]> list = (List<String[]>) new CSVFile(inputStream);
-//
-//        for (int i = 0; i < list.size(); i++) {
-//            String[] line = (String[]) list.get(i);
-//
-//            Log.i("mtSiniChi", line.toString());
-//        }
-
-
         analyzeCSV(new CSVFile(inputStream).read());
     }
 
@@ -151,13 +143,17 @@ public class HiraganaFragment extends Fragment {
         this.mColDataList.put(colKey, colDataList);
     }
 
+    private void fontChange(String fontName, TextView v) {
+        Typeface face;
+        face = Typeface.createFromAsset( getActivity().getAssets(), "font/" + fontName);
+
+        v.setTypeface(face);
+    }
+
     private void makeChartTable(View view) {
         int i;
         LinearLayout baseLayout = (LinearLayout) view.findViewById(R.id.chart_list_main_view);
         baseLayout.removeAllViews();
-        // Common common = (Common) getApplication();
-        //Common common = new Common();
-        //common.init();
 
         ArrayList<String> colKeyList = this.mColKeyList;
         HashMap<String, ArrayList<String[]>> colDataList = this.mColDataList;
@@ -176,27 +172,19 @@ public class HiraganaFragment extends Fragment {
             TextView uView = (TextView) lineLayout.findViewById(R.id.chart_input_text_u);
             TextView eView = (TextView) lineLayout.findViewById(R.id.chart_input_text_e);
             TextView oView = (TextView) lineLayout.findViewById(R.id.chart_input_text_o);
-         //   fontChange("LetterGothicStd-Slanted.otf", headView);
+            fontChange("LetterGothicStd-Slanted.otf", headView);
             aView.setText("");
             iView.setText("");
             uView.setText("");
             eView.setText("");
             oView.setText("");
 
-            Log.i("mtSiniChi", "################################ dataList.size= " + dataList.size());
             for (int li = 0; li < dataList.size(); li++) {
                 String[] data = (String[]) dataList.get(li);
 
-                Log.i("mtSiniChi", "---------------data.length= " + data.length);
-
-                for(int mt = 0; mt < data.length; mt++)
-                {
-                    Log.i("mtSiniChi", "mt-"+ data[mt].toString());
-                }
-
                 if (data.length >= 2) {
                     int pos = (Integer.parseInt(data[1]) - 1) % 5;
-                    Log.i("mtSiniChi", "mt-pos"+ pos);
+                    Log.i("kanatraining", "mt-pos"+ pos);
                     String hiragana = data[4];
                     switch (pos) {
                         case 0:
@@ -301,7 +289,7 @@ public class HiraganaFragment extends Fragment {
 
     public void loadVoice(String cha) {
         String filename = "hiragana/voice/" + (this.mCharDataList.get(cha))[2] + ".ogg";
-        Log.i("mtSiniChi", "Voice File: " + filename);
+        Log.i("kanatraining", "Voice File: " + filename);
         AssetManager am = getActivity().getAssets();
         this.mSoundId = -1;
         try {
