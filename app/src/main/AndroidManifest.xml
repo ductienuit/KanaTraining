@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--<activity android:name=".MainActivity">-->
-        <activity android:name=".HomeActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,9 +31,9 @@
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
-        <!--<activity-->
-            <!--android:name=".HomeActivity"-->
-            <!--android:label="@string/title_activity_home" />-->
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home" />
         <activity
             android:name=".QuizHomeActivity"
             android:launchMode="singleTop"
