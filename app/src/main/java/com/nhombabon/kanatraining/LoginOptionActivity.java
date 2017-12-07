@@ -18,7 +18,6 @@ public class LoginOptionActivity extends AppCompatActivity {
 
         Button signInButton = (Button)findViewById(R.id.sign_in);
         Button signUpButton = (Button)findViewById(R.id.sign_up);
-        Button withOutLogin = (Button)findViewById(R.id.without_login);
 
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,13 +32,6 @@ public class LoginOptionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent signUpIntent = new Intent(LoginOptionActivity.this, SignUpActivity.class);
                 startActivity(signUpIntent);
-            }
-        });
-
-        withOutLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
     }

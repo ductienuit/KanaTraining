@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "500535872456",
+    "firebase_url": "https://kanatraining-acda4.firebaseio.com",
+    "project_id": "kanatraining-acda4",
+    "storage_bucket": "kanatraining-acda4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500535872456:android:e332f6e5215865eb",
+        "android_client_info": {
+          "package_name": "com.nhombabon.kanatraining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500535872456-f0hdrr0no3ksf1ckkpo3ml9de5vmgfut.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nhombabon.kanatraining",
+            "certificate_hash": "b161507216fd7ba394a87f9dba75c5a75fd7365d"
+          }
+        },
+        {
+          "client_id": "500535872456-18uh4o6kbn3vtk7tpfs1m5m90g2n0q60.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAd02r8Euh2Ae3BeZ5x52YkIIBK486ylFQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500535872456-18uh4o6kbn3vtk7tpfs1m5m90g2n0q60.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,7 +16,6 @@ public class MainActivity extends AhoyOnboarderActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -46,6 +45,11 @@ public class MainActivity extends AhoyOnboarderActivity {
         setFinishButtonTitle("Get Started");
 
         setFinishButtonDrawableStyle(ContextCompat.getDrawable(this, R.drawable.rounded_button));
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override

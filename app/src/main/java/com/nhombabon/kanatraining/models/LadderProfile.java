@@ -1,9 +1,5 @@
 package com.nhombabon.kanatraining.models;
 
-/**
- * Created by simpumind on 3/19/17.
- */
-
 public class LadderProfile {
 
     private int image;

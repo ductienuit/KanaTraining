@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_gravity="center"
+            android:layout_gravity=""
             android:orientation="vertical"
             android:paddingLeft="@dimen/_24sdp"
             android:paddingRight="@dimen/_24sdp">
@@ -27,7 +27,7 @@
                 android:layout_width="@dimen/_110sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:layout_gravity="center"
-                android:src="@drawable/bookone" />
+                android:src="@drawable/bookone" android:contentDescription="TODO"/>
 
             <TextView
                 android:id="@+id/app_name"
@@ -47,7 +47,7 @@
                 android:layout_marginTop="@dimen/_24sdp"
                 android:background="@color/facebookColor"
                 android:padding="@dimen/_12sdp"
-                android:text="SIGN IN"
+                android:text="@string/sign_in"
                 android:textColor="@color/white" />
 
             <Button
@@ -57,41 +57,65 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:background="@color/googleColor"
                 android:padding="@dimen/_12sdp"
-                android:text="SIGN UP"
+                android:text="@string/sign_up"
                 android:textColor="@color/white" />
 
-            <Button
-                android:id="@+id/without_login"
+            <!--<Button-->
+                <!--android:id="@+id/without_login"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="@dimen/_8sdp"-->
+                <!--android:background="@color/colorAccent"-->
+                <!--android:padding="@dimen/_12sdp"-->
+                <!--android:text="WITHOUT LOGIN"-->
+                <!--android:textColor="@color/white" />-->
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:background="@color/colorAccent"
-                android:padding="@dimen/_12sdp"
-                android:text="WITHOUT LOGIN"
-                android:textColor="@color/white" />
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-            <TextView
-                android:id="@+id/login_link"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:text="@string/already_registered_login"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/_11sdp"
-                android:textStyle="bold" />
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/facebook_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:background="@color/facebookColor"
+                    android:padding="@dimen/_12sdp"
+                    android:text="FaceBook"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="@dimen/_8sdp" />
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/google_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:background="@color/googleColor"
+                    android:padding="@dimen/_12sdp"
+                    android:text="Google"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/_8sdp" />
+                    />
+
+            </LinearLayout>
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/no_login"
+            android:id="@+id/login_link"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:background="@color/colorPrimaryDark"
             android:gravity="center"
-            android:text="@string/no_registration"
+            android:text="@string/already_registered_login"
             android:textColor="@color/colorWhite" />
 
     </RelativeLayout>
