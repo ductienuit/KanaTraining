@@ -83,6 +83,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dip"
                 android:background="@color/colorIcons"
+                android:elevation="4dp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:padding="@dimen/_16sdp"
                 android:text="@string/sign_up"
                 android:textColor="@color/white" />

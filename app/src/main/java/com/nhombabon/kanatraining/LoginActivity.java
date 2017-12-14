@@ -121,7 +121,7 @@ public class LoginActivity extends BaseActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Email or Password is invalid.", Toast.LENGTH_SHORT).show();
+                            showToast("Email or Password is invalid.");
                         }
 
                         // [START_EXCLUDE]
@@ -164,14 +164,10 @@ public class LoginActivity extends BaseActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         // [START_EXCLUDE]
                         if(task.isSuccessful()) {
-                            Toast.makeText(LoginActivity.this,
-                                    "Verification email sent to " + user.getEmail(),
-                                    Toast.LENGTH_SHORT).show();
+                            showToast("Verification email sent to " + user.getEmail());
                         }else{
                             Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(LoginActivity.this,
-                                    "Failed to send verification email.",
-                                    Toast.LENGTH_SHORT).show();
+                            showToast("Failed to send verification email.");
                         }
                         // [END_EXCLUDE]
                     }

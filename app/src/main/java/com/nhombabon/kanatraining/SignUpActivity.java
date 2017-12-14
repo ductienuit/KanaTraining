@@ -60,10 +60,10 @@ public class SignUpActivity extends BaseActivity {
 
                 FormValidationUtils.clearErrors(mEmailField,mPasswordField);
 
-                if(FormValidationUtils.isBlank(mNameField)) {
-                    FormValidationUtils.setError(null, mNameField, "Please enter name");
-                    return;
-                }
+//                if(FormValidationUtils.isBlank(mNameField)) {
+//                    FormValidationUtils.setError(null, mNameField, "Please enter name");
+//                    return;
+//                }
 
                 if (FormValidationUtils.isBlank(mEmailField)) {
                     FormValidationUtils.setError(null, mEmailField, "Please enter email");
@@ -105,13 +105,11 @@ public class SignUpActivity extends BaseActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "Authentication failed." + task.getException().getMessage(),
-                                    Toast.LENGTH_SHORT).show();
+                            showToast("Authentication failed." + task.getException().getMessage());
                         }
 
                         // [START_EXCLUDE]
                         hideProgressDialog();
-                        showToast("We send you an activation link. Check your email!");
                         // [END_EXCLUDE]
                     }
                 });
@@ -128,19 +126,14 @@ public class SignUpActivity extends BaseActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         // [START_EXCLUDE]
                         if(task.isSuccessful()) {
-                            Toast.makeText(SignUpActivity.this,
-                                    "Verification email sent to " + user.getEmail(),
-                                    Toast.LENGTH_SHORT).show();
+                            showToast("Verification email sent to " + user.getEmail());
                         }else{
                             Log.e(TAG, "sendEmailVerification", task.getException());
-                            Toast.makeText(SignUpActivity.this,
-                                    "Failed to send verification email.",
-                                    Toast.LENGTH_SHORT).show();
+                            showToast("Failed to send verification email.");
                         }
                         // [END_EXCLUDE]
                     }
                 });
         // [END send_email_verification]
     }
-
 }

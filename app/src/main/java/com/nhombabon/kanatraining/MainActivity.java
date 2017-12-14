@@ -1,5 +1,6 @@
 package com.nhombabon.kanatraining;
-//Test commit
+
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import com.codemybrainsout.onboarder.AhoyOnboarderCard;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class MainActivity extends AhoyOnboarderActivity {
 
@@ -45,6 +47,7 @@ public class MainActivity extends AhoyOnboarderActivity {
         setFinishButtonTitle("Get Started");
 
         setFinishButtonDrawableStyle(ContextCompat.getDrawable(this, R.drawable.rounded_button));
+
     }
 
     @Override
@@ -57,4 +60,5 @@ public class MainActivity extends AhoyOnboarderActivity {
         Intent showSignUpIntent = new Intent(MainActivity.this, LoginOptionActivity.class);
         startActivity(showSignUpIntent);
     }
+
 }

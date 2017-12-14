@@ -1,6 +1,7 @@
 package com.nhombabon.kanatraining.utils;
 
 import android.app.ProgressDialog;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,14 +15,21 @@ import com.nhombabon.kanatraining.R;
 
 import butterknife.ButterKnife;
 
+/**
+ * Created by hoangkhanh on 12/8/17.
+ */
+
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    protected FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         setContentView(getLayoutResourceId());
 
         ButterKnife.bind(this);
@@ -43,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void showToast(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     protected abstract int getLayoutResourceId();
@@ -74,7 +82,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onStop() {
+    protected void onStop() {
         super.onStop();
         hideProgressDialog();
         if(mAuthStateListener != null) {

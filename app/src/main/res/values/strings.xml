@@ -5,8 +5,8 @@
     <string name="second_description">Compete with your peers and show off with your result</string>
     <string name="third_description">Educative and addictive quiz game for you</string>
 
-    <string name="facebook_app_id">1542894162412221</string>
-
+    <string name="facebook_app_id">1972715876321373</string>
+    <string name="fb_login_protocol_scheme">fb1972715876321373</string>
 
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>

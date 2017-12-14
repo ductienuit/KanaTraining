@@ -6,6 +6,10 @@ import android.util.Patterns;
 import android.widget.EditText;
 import android.widget.ScrollView;
 
+/**
+ * Created by hoangkhanh on 12/8/17.
+ */
+
 public class FormValidationUtils {
 
     public static boolean isBlank(EditText editText) {
