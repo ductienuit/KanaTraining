@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
-import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -41,7 +40,6 @@ public class LoginOptionActivity extends BaseActivity {
     private static final String TAG = LoginOptionActivity.class.getSimpleName();
 
     private CallbackManager callbackManager;
-    private AccessTokenTracker accessTokenTracker;
 
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 9001;
@@ -183,14 +181,12 @@ public class LoginOptionActivity extends BaseActivity {
 
         showProgressDialog();
 
-        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        final AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            showToast("Authentication Success");
                             startActivity(new Intent(LoginOptionActivity.this, HomeActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
