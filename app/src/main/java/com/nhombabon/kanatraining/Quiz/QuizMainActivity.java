@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.MainActivity;
 import com.nhombabon.kanatraining.R;
 
@@ -608,7 +609,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             it.putExtra(AppConfig.RESULT_QUIZ_WORD_LIST, this.mQuizWordList);
             if (this.mQuizType == 3) {
                 it.putExtra(AppConfig.RESULT_CHOICE_LIST, this.mChoiceList);
-                it.setClass(this,MainActivity.class);
+                it.setClass(this,HomeActivity.class);
                 Log.i("QuizAnswerSimilar","Loi o day");
             } else {
                 it.setClass(this, QuizAnswerActivity.class);
@@ -627,8 +628,6 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     public void clickTopNo(View v) {
         showContinueView(false);
     }
-
-
 
     private void setCanAnswer(boolean canAnswer) {
         this.mCanAnswer = canAnswer;
@@ -663,8 +662,8 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
     public void clickTopYes(View v) {
         Intent it = new Intent();
-        //it.setClass(this, QuizTopActivity.class);
-        it.setClass(this, MainActivity.class);
+        it.setClass(this, HomeActivity.class);
+        //it.setClass(this, MainActivity.class);
         it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         it.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
         startActivity(it);

@@ -25,7 +25,9 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_19sdp"></LinearLayout>
+                android:layout_height="@dimen/_19sdp">
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -76,14 +78,15 @@
 
 
         <LinearLayout
-            android:id="@+id/change_illust_base"
+
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/change_illust_base"
                 android:layout_width="@dimen/_120sdp"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_120sdp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/bg_cycle_answer04"
                 android:orientation="vertical">
@@ -91,11 +94,12 @@
                 <ImageView
                     android:id="@+id/change_illust"
                     android:layout_width="@dimen/_120sdp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_120sdp"
+
                     android:layout_centerInParent="true"
                     android:gravity="center"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/he_1" />
+                     />
             </LinearLayout>
 
         </LinearLayout>

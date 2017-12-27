@@ -171,7 +171,7 @@ public class QuizAnswerActivity extends AppBaseActivity {
         if (data[3].equals("i")) {
             fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, this.mEnView);
         }
-        loadAssetImage("ch_img/" + data[2] + "_1.png", this.mImageView);
+        loadAssetImage("hiragana/ch_img/" + data[2] + "_1.png", this.mImageView);
         this.mDescView.setText(spanString(data[5], data[1]));
     }
 
