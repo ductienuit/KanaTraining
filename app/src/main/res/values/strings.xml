@@ -61,8 +61,7 @@
     <string name="QuizStopPop_Guide">Quit and return to top</string>
     <string name="QuizAnswer_Button">Next</string>
 
-    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>
-    ;
+    <string name="FONT_NAME_FIRA_BOOK">FiraSans-BookItalic.otf</string>;
     <string name="FONT_NAME_FIRA_EXTRA">"FiraSans-ExtraBoldItalic.otf"</string>;
     <string name="FONT_NAME_FIRA_LIGHT"> "FiraSans-LightItalic.otf"</string>;
     <string name="FONT_NAME_FIRA_ULTRA">"FiraSans-UltraItalic.otf"</string>;
@@ -82,4 +81,11 @@
     <string name="QuizQuestion2_ViewName">Choose the Hiragana</string>
     <string name="QuizQuestion3_ViewName">Listen &amp; Choose</string>
     <string name="QuizQuestion4_ViewName">Similar Hiragana</string>
+
+
+
+    <string name="QuizAnswer_ViewName1">Read the Hiragana</string>
+    <string name="QuizAnswer_ViewName2">Choose the Hiragana</string>
+    <string name="QuizAnswer_ViewName3">Listen &amp; Choose</string>
+    <string name="QuizAnswer_ViewName4">Similar Hiragana</string>
 </resources>

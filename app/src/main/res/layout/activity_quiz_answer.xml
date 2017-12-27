@@ -21,11 +21,12 @@
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
 
-            <include layout="@layout/navi_bar_black" ></include>
+            <include layout="@layout/navi_bar_black"></include>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_19sdp"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -75,15 +76,18 @@
 
 
         <LinearLayout
+            android:id="@+id/change_illust_base"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_120sdp"
             android:orientation="vertical">
+
             <LinearLayout
-                android:layout_gravity="center_horizontal"
                 android:layout_width="@dimen/_120sdp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:background="@drawable/bg_cycle_answer04"
                 android:orientation="vertical">
+
                 <ImageView
                     android:id="@+id/change_illust"
                     android:layout_width="@dimen/_120sdp"
@@ -97,39 +101,153 @@
         </LinearLayout>
 
         <TextView
-            android:textSize="22sp"
-            android:textColor="@color/white"
-            android:gravity="center"
             android:id="@+id/text_type_catch"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp"
+            android:layout_weight="1.0"
+            android:gravity="center"
             android:text="Ah! There is a snake!"
-            android:layout_weight="1.0"/>
+            android:textColor="@color/white"
+            android:textSize="22sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_100sdp"
             android:orientation="vertical">
+
             <LinearLayout
-                android:layout_gravity="center_horizontal"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:background="@drawable/bg_cycle_answer04"
                 android:orientation="vertical">
+
                 <TextView
-                    android:textSize="20sp"
-                    android:textColor="@drawable/color_black_alpha"
-                    android:gravity="center"
                     android:id="@+id/answer_next_button"
-                    android:background="@drawable/btn_cycle03"
-                    android:clickable="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/QuizAnswer_Button"></TextView>
-                    <!--android:onClick="ClickAnswerNext" -->
-                    <!--/>-->
+                    android:background="@drawable/btn_cycle03"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/QuizAnswer_Button"
+                    android:textColor="@drawable/color_black_alpha"
+                    android:textSize="20sp"
+                    android:onClick="ClickAnswerNext">
+
+                </TextView>
+
             </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/pop_quiz_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whitealpha"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/pop_ans_blur_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/quiz_stop_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:fontFamily="sans-serif"
+                android:text="@string/QuizStopPop_Guide"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/linearLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/btn_frame01"
+                    android:onClick="clickTopNo"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_6sdp">
+
+                        <TextView
+                            android:id="@+id/btn_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no_Button"
+                            android:textColor="@drawable/color_reply"
+                            android:textSize="22sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/linearLayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/btn_frame01"
+                    android:clickable="true"
+                    android:onClick="clickTopYes"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_6sdp">
+
+                        <TextView
+                            android:id="@+id/btn_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yes_Button"
+                            android:textColor="@drawable/color_reply"
+                            android:textSize="22sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
 </RelativeLayout>
