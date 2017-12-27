@@ -7,8 +7,6 @@
         android:indeterminate="true"
         android:indeterminateDrawable="@drawable/custom_progress_bg"
         android:layout_centerInParent="true">
-        <!--style="@style/RotateTheme">-->
-        <!--<style ="?unknown_attr_ref: 101007a" />-->
     </ProgressBar>
 
 

@@ -54,7 +54,7 @@
     <string name="music">Music</string>
     <string name="language">Language</string>
     <string name="activity_animation_duration">100</string>
-    <string name="IllustTop_ViewName">Read Kana</string>
+    <string name="IllustTop_ViewName">Kana Training</string>
     <string name="QuizQuestion_Title">Select rows</string>
     <string name="QuizQuestion_Button">Ready, Go!</string>
     <string name="QuizResult_Time">Time</string>

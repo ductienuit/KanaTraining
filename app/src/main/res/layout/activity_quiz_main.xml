@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context="com.nhombabon.kanatraining.Quiz.QuizMainActivity"
-    >
+    tools:context="com.nhombabon.kanatraining.Quiz.QuizMainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -267,6 +267,7 @@
         </RelativeLayout>
 
     </LinearLayout>
+
     <RelativeLayout
         android:id="@+id/quiz_hint_button"
         android:layout_width="wrap_content"
@@ -284,6 +285,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/btn_hint" />
     </RelativeLayout>
+
     <ImageView
         android:id="@+id/img_quiz_correct"
         android:layout_width="wrap_content"
@@ -292,6 +294,7 @@
         android:scaleType="fitCenter"
         android:src="@drawable/img_quiz_true"
         android:visibility="gone" />
+
     <ImageView
         android:id="@+id/img_quiz_miss"
         android:layout_width="wrap_content"
