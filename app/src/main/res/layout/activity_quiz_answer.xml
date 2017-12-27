@@ -24,6 +24,9 @@
             <include layout="@layout/navi_bar_black" ></include>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_19sdp"></LinearLayout>
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -38,7 +41,7 @@
                         android:id="@+id/text_type_jp"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
-                        android:background="@drawable/btn_cycle02"
+                        android:background="@drawable/bg_cycle_answer04"
                         android:gravity="center"
                         android:tag="0"
                         android:text="he"
@@ -57,7 +60,7 @@
                         android:id="@+id/text_type_en"
                         android:layout_width="@dimen/_100sdp"
                         android:layout_height="@dimen/_100sdp"
-                        android:background="@drawable/btn_cycle02"
+                        android:background="@drawable/bg_cycle_answer04"
                         android:gravity="center"
                         android:tag="1"
                         android:text="ho"
@@ -99,17 +102,17 @@
             android:gravity="center"
             android:id="@+id/text_type_catch"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_height="@dimen/_50sdp"
             android:text="Ah! There is a snake!"
             android:layout_weight="1.0"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_120sdp"
+            android:layout_height="@dimen/_100sdp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_gravity="center_horizontal"
-                android:layout_width="@dimen/_120sdp"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_cycle_answer04"
                 android:orientation="vertical">
@@ -122,8 +125,9 @@
                     android:clickable="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/QuizAnswer_Button"
-                    android:onClick="ClickAnswerNext" />
+                    android:text="@string/QuizAnswer_Button"></TextView>
+                    <!--android:onClick="ClickAnswerNext" -->
+                    <!--/>-->
             </LinearLayout>
 
         </LinearLayout>
