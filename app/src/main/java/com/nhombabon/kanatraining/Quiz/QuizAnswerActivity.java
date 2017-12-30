@@ -12,10 +12,13 @@ import android.widget.TextView;
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.QuizHomeActivity;
 import com.nhombabon.kanatraining.R;
 
 import java.util.ArrayList;
+
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
 
 
 public class QuizAnswerActivity extends AppBaseActivity {
@@ -81,15 +84,15 @@ public class QuizAnswerActivity extends AppBaseActivity {
         this.mDescView = (TextView) findViewById(R.id.text_type_catch);
         this.mContinueView = findViewById(R.id.pop_quiz_top);
         this.mBlurView = (ImageView) findViewById(R.id.pop_ans_blur_image);
-        findViewById(R.id.navigation_back_button).setVisibility(View.GONE);
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.change_title));
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.answer_next_button));
-        fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.text_type_catch));
-        fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.text_type_en));
-        fontChange(AppConfig.FONT_NAME_KYOKASHO, (TextView) findViewById(R.id.text_type_jp));
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.quiz_stop_txt));
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.btn_no));
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.btn_yes));
+//        findViewById(R.id.navigation_back_button).setVisibility(View.GONE);
+//        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.change_title));
+//        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.answer_next_button));
+//        fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.text_type_catch));
+//        fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.text_type_en));
+//        fontChange(AppConfig.FONT_NAME_KYOKASHO, (TextView) findViewById(R.id.text_type_jp));
+//        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.quiz_stop_txt));
+//        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.btn_no));
+//        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.btn_yes));
     }
 
     public void onResume() {
@@ -191,9 +194,8 @@ public class QuizAnswerActivity extends AppBaseActivity {
         it.putExtra(AppConfig.RESULT_QUIZ_TYPE, this.mQuizType);
         it.putExtra(AppConfig.RESULT_ALL_TARGET_LIST, this.mTargetList);
         it.putExtra(AppConfig.RESULT_QUIZ_WORD_LIST, this.mQuizWordList);
-        //Quay trở về quiz chính
         it.setClass(this, QuizMainActivity.class);
-        it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        it.setFlags(FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(it);
     }
 
@@ -205,9 +207,8 @@ public class QuizAnswerActivity extends AppBaseActivity {
         it.putExtra(AppConfig.RESULT_QUIZ_TYPE, this.mQuizType);
         it.putExtra(AppConfig.RESULT_ALL_TARGET_LIST, this.mTargetList);
         it.putExtra(AppConfig.RESULT_QUIZ_WORD_LIST, this.mQuizWordList);
-        //Trả về bản kết quả
-        // it.setClass(this, QuizResultActivity.class);
-        it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        it.setClass(this, QuizResultActivity.class);
+        it.setFlags(FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(it);
     }
 
@@ -227,7 +228,7 @@ public class QuizAnswerActivity extends AppBaseActivity {
     public void clickTopYes(View v) {
         Intent it = new Intent();
         it.setClass(this, QuizHomeActivity.class);
-        it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        it.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(it);
     }
 

@@ -35,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         forgottenPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
 
@@ -51,12 +50,8 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
-//                startActivity(homeIntent);
-                Intent signInIntent = new Intent(LoginActivity.this, QuizSelectListActivity.class);
-                startActivity(signInIntent);
-
-
+                Intent homeIntent = new Intent(LoginActivity.this, QuizSelectListActivity.class);
+                startActivity(homeIntent);
             }
         });
     }

@@ -95,8 +95,8 @@
                     android:id="@+id/change_illust"
                     android:layout_width="@dimen/_120sdp"
                     android:layout_height="@dimen/_120sdp"
-
                     android:layout_centerInParent="true"
+                    android:src="@drawable/he_1"
                     android:gravity="center"
                     android:scaleType="fitCenter"
                      />

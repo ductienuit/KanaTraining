@@ -71,9 +71,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_16sdp"
+                android:padding="@dimen/_16sdp"
                 android:background="@color/colorIcons"
                 android:elevation="4dp"
-                android:padding="@dimen/_16sdp"
                 android:text="@string/btn_login"
                 android:textColor="@color/white" />
 

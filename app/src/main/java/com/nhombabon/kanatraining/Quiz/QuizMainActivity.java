@@ -23,6 +23,7 @@ import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
 import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.MainActivity;
+import com.nhombabon.kanatraining.QuizHomeActivity;
 import com.nhombabon.kanatraining.R;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     private View mCorrectView;
     private boolean mCountable;
     private View mCoverView;
-    private int mCutTime;
+
     private Animation mFadeInAnim;
     private Animation mFadeOutAnim;
     private ImageView mHintBlurView;
@@ -75,7 +76,9 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     private TextView mTimeView;
     private Timer mTimer = null;
     private ImageView mTopBlurView;
-    private int mZanTime;
+    private int mZanTime; // Giây
+    private int mCutTime;  // Phút
+
 
 
 
@@ -227,7 +230,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         this.mTimeView.setText(String.format("%d.%02d", new Object[]{this.mCutTime, this.mZanTime}));
         startTimer();
         View hintButton = findViewById(R.id.quiz_hint_button);
-              /*0 is for VISIBLE
+        /*0 is for VISIBLE
         4 is for INVISIBLE
         8 is for GONE*/
         if (this.mQuizType == 3) {
@@ -585,14 +588,14 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
     private void missEnd(String prevAnswerChar) {
         int prevNum = this.mChoiceList.indexOf(prevAnswerChar);
-        if (this.mChoiceList.size() - this.mMissCount > 1) {
-            this.mChoiceArea.findViewWithTag(Integer.toString(prevNum)).setVisibility(View.INVISIBLE);
-            setCanAnswer(true);
-            this.mCountable = true;
-            this.mCoverView.setVisibility(View.GONE);
-            this.mMissView.setVisibility(View.GONE);
-            return;
-        }
+//        if (this.mChoiceList.size() - this.mMissCount > 1) {
+//            this.mChoiceArea.findViewWithTag(Integer.toString(prevNum)).setVisibility(View.INVISIBLE);
+//            setCanAnswer(true);
+//            this.mCountable = true;
+//            this.mCoverView.setVisibility(View.GONE);
+//            this.mMissView.setVisibility(View.GONE);
+//            return;
+//        }
         this.mPointArray[this.mNowIndex] = -1;
         this.mCoverView.setVisibility(View.GONE);
         moveToNextActivity();
@@ -609,14 +612,12 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             it.putExtra(AppConfig.RESULT_QUIZ_WORD_LIST, this.mQuizWordList);
             if (this.mQuizType == 3) {
                 it.putExtra(AppConfig.RESULT_CHOICE_LIST, this.mChoiceList);
-                it.setClass(this,HomeActivity.class);
-                Log.i("QuizAnswerSimilar","Loi o day");
+                it.setClass(this, QuizAnswerSimilarActivity.class);
             } else {
                 it.setClass(this, QuizAnswerActivity.class);
             }
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(it);
-            dealloc();
         }
     }
 
@@ -663,11 +664,9 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     public void clickTopYes(View v) {
         Intent it = new Intent();
         it.setClass(this, HomeActivity.class);
-        //it.setClass(this, MainActivity.class);
         it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         it.addFlags(Intent.FLAG_RECEIVER_REPLACE_PENDING);
         startActivity(it);
-        dealloc();
     }
 
     public void clickQuizHint(View v) {
@@ -789,14 +788,6 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     public void finish() {
         Log.e("finished", "finish");
         super.finish();
-    }
-
-    private void dealloc() {
-        Runtime runtime = Runtime.getRuntime();
-        Log.v("Runtime", "トータルメモリ[KB] = " + ((int) (runtime.totalMemory() / PlaybackStateCompat.ACTION_PLAY_FROM_MEDIA_ID)));
-        Log.v("Runtime", "空きメモリ[KB] = " + ((int) (runtime.freeMemory() / PlaybackStateCompat.ACTION_PLAY_FROM_MEDIA_ID)));
-        Log.v("Runtime", "現在使用しているメモリ[KB] = " + ((int) ((runtime.totalMemory() - runtime.freeMemory()) / PlaybackStateCompat.ACTION_PLAY_FROM_MEDIA_ID)));
-        Log.v("Runtime", "Dalvikで使用できる最大メモリ[KB] = " + ((int) (runtime.maxMemory() / PlaybackStateCompat.ACTION_PLAY_FROM_MEDIA_ID)));
     }
 }
 
