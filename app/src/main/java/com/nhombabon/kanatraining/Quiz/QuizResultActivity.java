@@ -231,10 +231,6 @@ public class QuizResultActivity extends AppBaseActivity {
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.title_quiz_time_best));
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.quiz_retry_button));
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.quiz_menu_button));
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.btn_no));
-        fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.btn_yes));
-
-
 
 
 

@@ -193,11 +193,11 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         this.mChoiceInner3.setScaleX(0.9f);
         this.mChoiceInner3.setScaleY(0.9f);
         findViewById(R.id.quiz_top_button).setVisibility(View.VISIBLE);
-        findViewById(R.id.navigation_back_button).setVisibility(View.GONE);
         this.mSoundId = -1;
         this.mSeSoundId = -1;
         Intent intent = getIntent();
         this.mQuizType = intent.getIntExtra(AppConfig.RESULT_QUIZ_TYPE, 0);
+        findViewById(R.id.navigation_back_button).setVisibility(View.GONE);
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.change_title));
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.time_title));
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.time_measurement));
@@ -588,14 +588,18 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
     private void missEnd(String prevAnswerChar) {
         int prevNum = this.mChoiceList.indexOf(prevAnswerChar);
-//        if (this.mChoiceList.size() - this.mMissCount > 1) {
-//            this.mChoiceArea.findViewWithTag(Integer.toString(prevNum)).setVisibility(View.INVISIBLE);
-//            setCanAnswer(true);
-//            this.mCountable = true;
-//            this.mCoverView.setVisibility(View.GONE);
-//            this.mMissView.setVisibility(View.GONE);
-//            return;
-//        }
+        Log.e("prevAnswerChar", prevAnswerChar);
+        if (this.mChoiceList.size() - this.mMissCount > 1) {
+            this.mChoiceArea.findViewWithTag(Integer.toString(prevNum)).setVisibility(View.INVISIBLE);
+            Log.e("mChoice", mChoiceArea.toString());
+            setCanAnswer(true);
+            this.mCountable = true;
+            this.mCoverView.setVisibility(View.GONE);
+            Log.e("mCoverView", mCoverView.toString());
+            this.mMissView.setVisibility(View.GONE);
+            Log.e("mMissView", mMissView.toString());
+            return;
+        }
         this.mPointArray[this.mNowIndex] = -1;
         this.mCoverView.setVisibility(View.GONE);
         moveToNextActivity();

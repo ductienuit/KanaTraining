@@ -12,8 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
+        android:visibility="visible"
         android:orientation="vertical"
         android:paddingBottom="@dimen/_20sdp">
+
         <include layout="@layout/navi_bar_black" />
 
         <LinearLayout
@@ -186,7 +188,7 @@
         <LinearLayout
             android:id="@+id/choice_area"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_100sdp"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:orientation="vertical">
@@ -242,29 +244,29 @@
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <RelativeLayout
-            android:id="@+id/bottom_questions_button_base"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_gravity="center_horizontal"
-            android:clickable="true"
-            android:onClick="ClickQuestionsButton"
-            android:tag="2">
-
-            <TextView
-                android:id="@+id/bottom_questions_button"
+            <RelativeLayout
+                android:id="@+id/bottom_questions_button_base"
                 android:layout_width="@dimen/_100sdp"
                 android:layout_height="@dimen/_100sdp"
-                android:background="@drawable/btn_cycle02"
-                android:gravity="center"
-                android:tag="2"
-                android:text="w(o)"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="40sp" />
-        </RelativeLayout>
+                android:layout_gravity="center_horizontal"
+                android:clickable="true"
+                android:onClick="ClickQuestionsButton"
+                android:tag="2">
+
+                <TextView
+                    android:id="@+id/bottom_questions_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_cycle02"
+                    android:gravity="center"
+                    android:tag="2"
+                    android:text="w(o)"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -286,6 +288,8 @@
             android:src="@drawable/btn_hint" />
     </RelativeLayout>
 
+
+    <!--Ảnh khi chọn đúng-->
     <ImageView
         android:id="@+id/img_quiz_correct"
         android:layout_width="wrap_content"
@@ -295,6 +299,7 @@
         android:src="@drawable/img_quiz_true"
         android:visibility="gone" />
 
+    <!--Ảnh khi chọn sai-->
     <ImageView
         android:id="@+id/img_quiz_miss"
         android:layout_width="wrap_content"
@@ -344,6 +349,7 @@
         android:id="@+id/pop_quiz_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/whitealpha"
         android:clickable="true"
         android:visibility="gone">
 
@@ -364,57 +370,72 @@
                 android:id="@+id/quiz_stop_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|right|center_horizontal|fill_horizontal|center|fill|start|end"
-                android:layout_marginBottom="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:fontFamily="sans-serif"
                 android:text="@string/QuizStopPop_Guide"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:visibility="visible" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="top"
+
                 android:orientation="horizontal">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_centerHorizontal="true"
                     android:layout_weight="1.0"
                     android:background="@drawable/btn_frame01"
-                    android:clickable="true"
-                    android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
                     android:onClick="clickTopNo"
-                    android:visibility="visible">
+                    android:clickable="true"
+                    android:visibility="visible"
+                    android:gravity="center_horizontal">
 
                     <TextView
                         android:id="@+id/btn_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center"
                         android:text="@string/no_Button"
                         android:textColor="@drawable/color_reply"
-                        android:textSize="16sp" />
+                        android:textSize="22sp" />
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_alignBottom="@+id/linearLayout"
+                    android:layout_centerHorizontal="true"
                     android:layout_weight="1.0"
                     android:background="@drawable/btn_frame01"
                     android:clickable="true"
-                    android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
                     android:onClick="clickTopYes"
+                    android:orientation="vertical"
                     android:visibility="visible">
 
-                    <TextView
-                        android:id="@+id/btn_yes"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/yes_Button"
-                        android:textColor="@drawable/color_reply"
-                        android:textSize="16sp" />
-                </RelativeLayout>
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_6sdp">
+
+                        <TextView
+                            android:id="@+id/btn_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yes_Button"
+                            android:textColor="@drawable/color_reply"
+                            android:textSize="22sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 

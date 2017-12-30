@@ -45,7 +45,7 @@
             android:clickable="true"
             android:onClick="clickQuizTop"
             android:padding="15dp"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
                 android:layout_width="wrap_content"

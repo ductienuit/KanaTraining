@@ -30,7 +30,7 @@ public class AppConfig {
     public static final int POINT_NONE = 0;
     public static final String PREF_CHART_GUIDE = "pref_chart_guide";
     public static final String PREF_QUIZ_BEST_TIME = "pref_quiz_best_time";
-    public static final int QUIZ_BEST_TIME_DEFAULT = 5999;
+    public static final int QUIZ_BEST_TIME_DEFAULT = 9999;
     public static final int QUIZ_CHOOSE = 1;
     public static final int QUIZ_LISTEN = 2;
     public static final int QUIZ_READ = 0;
