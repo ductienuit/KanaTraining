@@ -13,8 +13,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.R;
-import com.nhombabon.kanatraining.models.CSVFile;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -100,7 +101,7 @@ public class KatakanaFragment extends Fragment {
             e.printStackTrace();
         }
 
-        analyzeCSV(new CSVFile(inputStream).read());
+        //analyzeCSV(new CSVFile(inputStream).read());
     }
 
     public void analyzeCSV(List<String[]> list) {
@@ -123,7 +124,7 @@ public class KatakanaFragment extends Fragment {
                 if (!lineKey.equals(prevLineKey)) {
                     if (prevLineKey.length() > 0) {
                         Log.i("Common", "ChangeLine " + colKey);
-                        this.mColDataList.put(colKey, (ArrayList<String[]>)colDataList);
+                        this.mColDataList.put(colKey, (ArrayList<String[]>) colDataList);
                         colDataList = new ArrayList<String[]>();
                     }
                     colKey = line[4];
@@ -145,18 +146,32 @@ public class KatakanaFragment extends Fragment {
 
     private void fontChange(String fontName, TextView v) {
         Typeface face;
-        face = Typeface.createFromAsset( getActivity().getAssets(), "font/" + fontName);
+        face = Typeface.createFromAsset(getActivity().getAssets(), "font/" + fontName);
 
         v.setTypeface(face);
     }
 
     private void makeChartTable(View view) {
+        //Gọi application để đọc file crv add vào list
+        Common common;
+        try {
+            common = (Common) getActivity().getApplication();
+        } catch (Exception e) {
+            e.printStackTrace();
+            common = (Common) getActivity().getApplication();
+        }
+        if (common.getmCharDataList() == null) {
+            Log.e("common.mCharDataList", "null");
+            common.init();
+        }
+
+
         int i;
         LinearLayout baseLayout = (LinearLayout) view.findViewById(R.id.chart_list_main_view);
         baseLayout.removeAllViews();
 
-        ArrayList<String> colKeyList = this.mColKeyList;
-        HashMap<String, ArrayList<String[]>> colDataList = this.mColDataList;
+        ArrayList<String> colKeyList = common.mColKeyListKatakana;
+        HashMap<String, ArrayList<String[]>> colDataList = common.mColDataListKatakana;
         boolean clickable = true;
         if (this.mChartType == 0) {
             clickable = false;
@@ -184,7 +199,7 @@ public class KatakanaFragment extends Fragment {
 
                 if (data.length >= 2) {
                     int pos = (Integer.parseInt(data[1]) - 1) % 5;
-                    Log.i("kanatraining", "mt-pos"+ pos);
+                    Log.i("kanatraining", "mt-pos" + pos);
                     String hiragana = data[4];
                     switch (pos) {
                         case 0:
@@ -197,7 +212,7 @@ public class KatakanaFragment extends Fragment {
                                 break;
                             }
                             aView.setText(hiragana);
-                            if (hiragana.equals("ん")) {
+                            if (hiragana.equals("ン")) {
                                 aView.setBackgroundResource(R.drawable.bg_circle08_s);
                             }
                             if (this.mSelectedChar != null && hiragana.equals(this.mSelectedChar)) {
@@ -288,7 +303,20 @@ public class KatakanaFragment extends Fragment {
     }
 
     public void loadVoice(String cha) {
-        String filename = "katakana/voice/" + (this.mCharDataList.get(cha))[2] + ".ogg";
+        //Gọi application để đọc file crv add vào list
+        Common common;
+        try {
+            common = (Common) getActivity().getApplication();
+        } catch (Exception e) {
+            e.printStackTrace();
+            common = (Common) getActivity().getApplication();
+        }
+        if (common.getmCharDataList() == null) {
+            Log.e("common.mCharDataList", "null");
+            common.init();
+        }
+
+        String filename = "katakana/voice/" + (common.mCharDataListKatakana.get(cha))[2] + ".ogg";
         Log.i("kanatraining", "Voice File: " + filename);
         AssetManager am = getActivity().getAssets();
         this.mSoundId = -1;
@@ -312,7 +340,7 @@ public class KatakanaFragment extends Fragment {
 
         this.mSoundPool = new SoundPool(1, 3, 0);
         this.mSoundPool.setOnLoadCompleteListener(new KatakanaFragment.C01301());
-        loadCSV(view);
+
         makeChartTable(view);
 
         return view;

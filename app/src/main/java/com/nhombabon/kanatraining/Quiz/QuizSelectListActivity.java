@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
-import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.R;
 import com.nhombabon.kanatraining.models.InforChoose;
 

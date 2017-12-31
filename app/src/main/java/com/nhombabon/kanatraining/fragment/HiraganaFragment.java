@@ -12,17 +12,16 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.R;
-import com.nhombabon.kanatraining.models.CSVFile;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by mtSiniChi on 12/11/2017.
+ * Edited by DucTien on 31/12/2017
  */
 
 public class HiraganaFragment extends Fragment {
@@ -33,10 +32,7 @@ public class HiraganaFragment extends Fragment {
     private SoundPool mSoundPool;
 
     public HashMap<String, String[]> mCharDataList;
-    public ArrayList<String> mCharEnList;
-    public ArrayList<String> mCharList;
-    public HashMap<String, ArrayList<String[]>> mColDataList;
-    public ArrayList<String> mColKeyList;
+
 
     class C01301 implements SoundPool.OnLoadCompleteListener {
         C01301() {
@@ -92,56 +88,56 @@ public class HiraganaFragment extends Fragment {
         }
     }
 
-    public void loadCSV(View view) {
-        InputStream inputStream = null;
-        try {
-            inputStream = getResources().getAssets().open("hiragana/data.csv");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//    public void loadCSV() {
+//        InputStream inputStream = null;
+//        try {
+//            inputStream = getResources().getAssets().open("hiragana/data.csv");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        analyzeCSV(new CSVFile(inputStream).read());
+//    }
 
-        analyzeCSV(new CSVFile(inputStream).read());
-    }
-
-    public void analyzeCSV(List<String[]> list) {
-        String colKey = "";
-        String key = "";
-        String en = "";
-        this.mColKeyList = new ArrayList<String>();
-        this.mColDataList = new HashMap<String, ArrayList<String[]>>();
-        this.mCharDataList = new HashMap<String, String[]>();
-        this.mCharList = new ArrayList<String>();
-        this.mCharEnList = new ArrayList<String>();
-        ArrayList<String[]> colDataList = new ArrayList<String[]>();
-        String prevLineKey = "";
-
-        for (int i = 0; i < list.size(); i++) {
-            String[] line = (String[]) list.get(i);
-            if (line.length > 3) {
-                String lineKey = line[0];
-                Log.i("Common", "LineKey " + lineKey);
-                if (!lineKey.equals(prevLineKey)) {
-                    if (prevLineKey.length() > 0) {
-                        Log.i("Common", "ChangeLine " + colKey);
-                        this.mColDataList.put(colKey, (ArrayList<String[]>)colDataList);
-                        colDataList = new ArrayList<String[]>();
-                    }
-                    colKey = line[4];
-                    Log.i("Common", "ColKey " + colKey);
-                    this.mColKeyList.add(colKey);
-                }
-                key = line[4];
-                en = line[3];
-                this.mCharList.add(key);
-                this.mCharEnList.add(en);
-                colDataList.add(line);
-                this.mCharDataList.put(key, line);
-                prevLineKey = lineKey;
-            }
-        }
-        Log.i("Common", "ChangeLine " + colKey);
-        this.mColDataList.put(colKey, colDataList);
-    }
+//    public void analyzeCSV(List<String[]> list) {
+//        String colKey = "";
+//        String key = "";
+//        String en = "";
+//        this.mColKeyList = new ArrayList<String>();
+//        this.mColDataList = new HashMap<String, ArrayList<String[]>>();
+//        this.mCharDataList = new HashMap<String, String[]>();
+//        this.mCharList = new ArrayList<String>();
+//        this.mCharEnList = new ArrayList<String>();
+//        ArrayList<String[]> colDataList = new ArrayList<String[]>();
+//        String prevLineKey = "";
+//
+//        for (int i = 0; i < list.size(); i++) {
+//            String[] line = (String[]) list.get(i);
+//            if (line.length > 3) {
+//                String lineKey = line[0];
+//                Log.i("Common", "LineKey " + lineKey);
+//                if (!lineKey.equals(prevLineKey)) {
+//                    if (prevLineKey.length() > 0) {
+//                        Log.i("Common", "ChangeLine " + colKey);
+//                        this.mColDataList.put(colKey, (ArrayList<String[]>)colDataList);
+//                        colDataList = new ArrayList<String[]>();
+//                    }
+//                    colKey = line[4];
+//                    Log.i("Common", "ColKey " + colKey);
+//                    this.mColKeyList.add(colKey);
+//                }
+//                key = line[4];
+//                en = line[3];
+//                this.mCharList.add(key);
+//                this.mCharEnList.add(en);
+//                colDataList.add(line);
+//                this.mCharDataList.put(key, line);
+//                prevLineKey = lineKey;
+//            }
+//        }
+//        Log.i("Common", "ChangeLine " + colKey);
+//        this.mColDataList.put(colKey, colDataList);
+//    }
 
     private void fontChange(String fontName, TextView v) {
         Typeface face;
@@ -151,12 +147,30 @@ public class HiraganaFragment extends Fragment {
     }
 
     private void makeChartTable(View view) {
+
+
+        //Gọi application để đọc file crv add vào list
+        Common common;
+        try {
+            common = (Common) getActivity().getApplication();
+        } catch (Exception e) {
+            e.printStackTrace();
+            common = (Common) getActivity().getApplication();
+        }
+        if (common.getmCharDataList() == null) {
+            Log.e("common.mCharDataList", "null");
+            common.init();
+        }
+
+
+
+
         int i;
         LinearLayout baseLayout = (LinearLayout) view.findViewById(R.id.chart_list_main_view);
         baseLayout.removeAllViews();
 
-        ArrayList<String> colKeyList = this.mColKeyList;
-        HashMap<String, ArrayList<String[]>> colDataList = this.mColDataList;
+        ArrayList<String> colKeyList = common.mColKeyListHiragana;
+        HashMap<String, ArrayList<String[]>> colDataList = common.mColDataListHiragana;
         boolean clickable = true;
         if (this.mChartType == 0) {
             clickable = false;
@@ -288,7 +302,22 @@ public class HiraganaFragment extends Fragment {
     }
 
     public void loadVoice(String cha) {
-        String filename = "hiragana/voice/" + (this.mCharDataList.get(cha))[2] + ".ogg";
+
+        //Gọi application để đọc file crv add vào list
+        Common common;
+        try {
+            common = (Common) getActivity().getApplication();
+        } catch (Exception e) {
+            e.printStackTrace();
+            common = (Common) getActivity().getApplication();
+        }
+        if (common.getmCharDataList() == null) {
+            Log.e("common.mCharDataList", "null");
+            common.init();
+        }
+
+
+        String filename = "hiragana/voice/" + (common.mCharDataListHiragana.get(cha))[2] + ".ogg";
         Log.i("kanatraining", "Voice File: " + filename);
         AssetManager am = getActivity().getAssets();
         this.mSoundId = -1;
@@ -311,7 +340,7 @@ public class HiraganaFragment extends Fragment {
 
         this.mSoundPool = new SoundPool(1, 3, 0);
         this.mSoundPool.setOnLoadCompleteListener(new HiraganaFragment.C01301());
-        loadCSV(view);
+
         makeChartTable(view);
 
         return view;

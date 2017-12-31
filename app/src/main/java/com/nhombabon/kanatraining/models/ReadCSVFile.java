@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /* compiled from: Common */
-public class CSVFile {
+class ReadCSVFile {
     InputStream inputStream;
 
-    public CSVFile(InputStream inputStream) {
+    public ReadCSVFile(InputStream inputStream) {
         this.inputStream = inputStream;
     }
 

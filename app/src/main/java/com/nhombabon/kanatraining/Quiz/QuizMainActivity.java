@@ -6,7 +6,6 @@ import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.support.v4.media.session.PlaybackStateCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
@@ -20,10 +19,8 @@ import android.widget.TextView;
 
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
-import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.HomeActivity;
-import com.nhombabon.kanatraining.MainActivity;
-import com.nhombabon.kanatraining.QuizHomeActivity;
 import com.nhombabon.kanatraining.R;
 import com.nhombabon.kanatraining.models.InforChoose;
 
