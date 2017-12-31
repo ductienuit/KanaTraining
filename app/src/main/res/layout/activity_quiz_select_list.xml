@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
-        android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:gravity="center"
         android:text="@string/QuizQuestion_Title"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
-        android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible">
 
@@ -36,7 +36,7 @@
             android:layout_height="@dimen/_50sdp"
             android:background="@drawable/bg_quiz_select_normal"
             android:clickable="true"
-            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:gravity="center"
             android:onClick="clickCell"
             android:tag="0"
             android:text="a–o and ka–ko"
@@ -50,7 +50,7 @@
             android:layout_height="@dimen/_50sdp"
             android:background="@drawable/bg_quiz_select_normal"
             android:clickable="true"
-            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:gravity="center"
             android:onClick="clickCell"
             android:tag="1"
             android:text="sa–so and ta–to"
@@ -64,7 +64,7 @@
             android:layout_height="@dimen/_50sdp"
             android:background="@drawable/bg_quiz_select_normal"
             android:clickable="true"
-            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:gravity="center"
             android:onClick="clickCell"
             android:tag="2"
             android:text="na–no and ha–ho"
@@ -78,7 +78,7 @@
             android:layout_height="@dimen/_50sdp"
             android:background="@drawable/bg_quiz_select_normal"
             android:clickable="true"
-            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:gravity="center"
             android:onClick="clickCell"
             android:textAlignment="center"
             android:tag="3"
@@ -92,7 +92,7 @@
             android:layout_height="@dimen/_51sdp"
             android:background="@drawable/bg_quiz_select_normal"
             android:clickable="true"
-            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:gravity="center"
             android:onClick="clickCell"
             android:tag="4"
             android:text="ra–ro and wa–N"
@@ -100,21 +100,24 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <RelativeLayout
         android:id="@+id/quiz_select_similar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@drawable/img_text_similar"
         android:visibility="gone" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|bottom|left|right|center_vertical|fill_vertical|fill_horizontal|clip_vertical|clip_horizontal|start"
+        android:layout_gravity="center"
         android:layout_weight="1"
         android:orientation="vertical"
        >

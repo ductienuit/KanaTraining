@@ -248,7 +248,6 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
 
     public void clickTopYes(View v) {
         Intent it = new Intent();
-        //it.setClass(this, QuizTopActivity.class);
         it.setClass(this, QuizMainActivity.class);
         it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(it);

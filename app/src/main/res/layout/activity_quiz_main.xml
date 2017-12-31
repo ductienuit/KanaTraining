@@ -345,6 +345,8 @@
             android:visibility="gone" />
     </RelativeLayout>
 
+
+    //Pop up khi chọn nhấn nút || phía trên
     <RelativeLayout
         android:id="@+id/pop_quiz_top"
         android:layout_width="match_parent"

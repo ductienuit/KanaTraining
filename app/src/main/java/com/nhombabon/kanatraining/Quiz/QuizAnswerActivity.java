@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.QuizHomeActivity;
 import com.nhombabon.kanatraining.R;
 import com.nhombabon.kanatraining.models.InforChoose;
@@ -261,7 +262,7 @@ public class QuizAnswerActivity extends AppBaseActivity {
 
     public void clickTopYes(View v) {
         Intent it = new Intent();
-        it.setClass(this, QuizHomeActivity.class);
+        it.setClass(this, HomeActivity.class);
         it.addFlags(FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(it);
     }

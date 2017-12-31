@@ -10,10 +10,10 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="@dimen/_100sdp"
+            android:layout_width="@dimen/_150sdp"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|bottom|center_vertical|fill_vertical|center|fill"
-            android:layout_marginLeft="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
             android:layout_weight="1.0"
             android:orientation="vertical">
 
@@ -44,23 +44,24 @@
 
             <ImageView
                 android:id="@+id/quiz_answer_base_image"
-                android:layout_width="@dimen/_100sdp"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/he_1" />
         </RelativeLayout>
 
         <TextView
             android:id="@+id/text_type_jp"
-            android:layout_width="@dimen/_100sdp"
-            android:layout_height="@dimen/_100sdp"
-            android:layout_margin="10dp"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="5dp"
             android:background="@drawable/bg_circle06_m"
-            android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+            android:gravity="center"
             android:text="へ"
             android:textColor="@color/black"
             android:textAlignment="center"
-            android:textSize="90dp" />
+            android:textSize="69dp" />
 
     </LinearLayout>
 
