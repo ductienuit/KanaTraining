@@ -107,7 +107,7 @@
                     android:layout_weight="1.0"
                     android:background="@drawable/btn_frame01"
                     android:clickable="true"
-                    android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                    android:gravity="center"
                     android:onClick="clickTopYes"
                     android:visibility="visible">
 

@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
+import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 
@@ -123,7 +125,12 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
 
 
             loadResBgImage(bgname, this.mFirstImageBaseView);
-            loadAssetImage(String.format("ch_img/%s_1.png", new Object[]{data[2]}), this.mFirstImageView);
+
+            if(InforChoose.getChooseKana()==0)
+                 loadAssetImage(String.format("hiragana/ch_img/%s_1.png", new Object[]{data[2]}), this.mFirstImageView);
+            else
+                loadAssetImage(String.format("katakana/ch_img/%s_1.png", new Object[]{data[2]}), this.mFirstImageView);
+
             this.mFirstTextJpView.setText(data[4]);
             fontChange(AppConfig.FONT_NAME_KYOKASHO, this.mFirstTextJpView);
             if (data[3].equals("i")) {
@@ -147,8 +154,14 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
                 }
 
 
+
                 loadResBgImage(bgname, this.mSecondImageBaseView);
-                loadAssetImage(String.format("ch_img/%s_1.png", new Object[]{data[2]}), this.mSecondImageView);
+                if(InforChoose.getChooseKana()==0)
+                    loadAssetImage(String.format("hiragana/ch_img/%s_1.png", new Object[]{data[2]}), this.mSecondImageView);
+                else
+                    loadAssetImage(String.format("katakana/ch_img/%s_1.png", new Object[]{data[2]}), this.mSecondImageView);
+
+
                 this.mSecondTextJpView.setText(data[4]);
                 fontChange(AppConfig.FONT_NAME_KYOKASHO, this.mSecondTextJpView);
                 if (data[3].equals("i")) {
@@ -172,7 +185,16 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
 
 
                 loadResBgImage(bgname, this.mThirdImageBaseView);
-                loadAssetImage(String.format("ch_img/%s_1.png", new Object[]{data[2]}), this.mThirdImageView);
+
+
+                if(InforChoose.getChooseKana()==0)
+                    loadAssetImage(String.format("hiragana/ch_img/%s_1.png", new Object[]{data[2]}), this.mThirdImageView);
+                else
+                    loadAssetImage(String.format("katakana/ch_img/%s_1.png", new Object[]{data[2]}), this.mThirdImageView);
+
+
+
+
                 this.mThirdTextJpView.setText(data[4]);
                 this.mThirdBaseView.setVisibility(View.GONE);
                 fontChange(AppConfig.FONT_NAME_KYOKASHO, this.mThirdTextJpView);
@@ -248,7 +270,7 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
 
     public void clickTopYes(View v) {
         Intent it = new Intent();
-        it.setClass(this, QuizMainActivity.class);
+        it.setClass(this, HomeActivity.class);
         it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(it);
     }
