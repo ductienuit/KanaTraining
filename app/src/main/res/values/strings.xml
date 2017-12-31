@@ -89,6 +89,16 @@
     <string name="QuizQuestion4_ViewName">Similar Hiragana</string>
 
 
+    <string name="Quiz_Question5">Read the Katakana</string>
+    <string name="Quiz_Question6">Choose the Katakana</string>
+    <string name="Quiz_Question7">Listen &amp; Choose</string>
+    <string name="Quiz_Question8">Similar Katakana</string>
+    <string name="QuizQuestion5_ViewName">Read the Katakana</string>
+    <string name="QuizQuestion6_ViewName">Choose the Katakana</string>
+    <string name="QuizQuestion7_ViewName">Listen &amp; Choose</string>
+    <string name="QuizQuestion8_ViewName">Similar Katakana</string>
+
+
     <string name="QuizAnswer_ViewName1">Read the Hiragana</string>
     <string name="QuizAnswer_ViewName2">Choose the Hiragana</string>
     <string name="QuizAnswer_ViewName3">Listen &amp; Choose</string>

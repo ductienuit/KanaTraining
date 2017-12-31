@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.codemybrainsout.onboarder.AhoyOnboarderActivity;
 import com.codemybrainsout.onboarder.AhoyOnboarderCard;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,10 @@ public class MainActivity extends AhoyOnboarderActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);
+
+        //Tạo singleton các giá trị âm thanh, lựa chọn bảng chữ cái, điểm sau mỗi lần để dễ truy cập
+        InforChoose.getInstance();
+
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 

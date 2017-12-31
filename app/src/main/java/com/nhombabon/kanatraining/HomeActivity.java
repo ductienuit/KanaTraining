@@ -22,32 +22,27 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = null;
-            switch (item.getItemId()) {
-                case R.id.quiz_mart:
-                    selectedFragment = new QuizTopicsFragment();
-                    break;
-                case R.id.home:
-                    selectedFragment = new HomeFragment();
-                    break;
-                case R.id.ladder_board:
-                    selectedFragment = new LadderBoardFragment();
-                    break;
-                case R.id.settings:
-                    selectedFragment = new SettingsFragment();
-                    break;
-            }
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.content, selectedFragment);
-            transaction.commit();
-            return true;
-        }
-
-    };
+            = item -> {
+                Fragment selectedFragment = null;
+                switch (item.getItemId()) {
+                    case R.id.quiz_mart:
+                        selectedFragment = new QuizTopicsFragment();
+                        break;
+                    case R.id.home:
+                        selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.ladder_board:
+                        selectedFragment = new LadderBoardFragment();
+                        break;
+                    case R.id.settings:
+                        selectedFragment = new SettingsFragment();
+                        break;
+                }
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.content, selectedFragment);
+                transaction.commit();
+                return true;
+            };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

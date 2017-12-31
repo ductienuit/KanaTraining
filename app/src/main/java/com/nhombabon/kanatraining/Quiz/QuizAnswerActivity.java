@@ -14,6 +14,7 @@ import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
 import com.nhombabon.kanatraining.QuizHomeActivity;
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 
@@ -135,18 +136,43 @@ public class QuizAnswerActivity extends AppBaseActivity {
 
     public void adjustTitle() {
         TextView titleView = (TextView) findViewById(R.id.change_title);
-        switch (this.mQuizType) {
-            case 0:
-                titleView.setText(getResources().getString(R.string.QuizQuestion1_ViewName));
-                return;
-            case 1:
-                titleView.setText(getResources().getString(R.string.QuizQuestion2_ViewName));
-                return;
-            case 2:
-                titleView.setText(getResources().getString(R.string.QuizQuestion3_ViewName));
-                return;
-            default:
-                return;
+        if(InforChoose.getChooseKana()==0)
+        {
+            switch (this.mQuizType) {
+                case 0:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion1_ViewName));
+                    return;
+                case 1:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion2_ViewName));
+                    return;
+                case 2:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion3_ViewName));
+                    return;
+                case 3:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion4_ViewName));
+                    return;
+                default:
+                    return;
+            }
+        }
+        else
+        {
+            switch (this.mQuizType) {
+                case 0:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion5_ViewName));
+                    return;
+                case 1:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion6_ViewName));
+                    return;
+                case 2:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion7_ViewName));
+                    return;
+                case 3:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion8_ViewName));
+                    return;
+                default:
+                    return;
+            }
         }
     }
 
@@ -173,7 +199,14 @@ public class QuizAnswerActivity extends AppBaseActivity {
         if (data[3].equals("i")) {
             fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, this.mEnView);
         }
-        loadAssetImage("hiragana/ch_img/" + data[2] + "_1.png", this.mImageView);
+
+
+        if (InforChoose.getChooseKana()==0)
+            loadAssetImage("hiragana/ch_img/" + data[2] + "_1.png", this.mImageView);
+        else
+            loadAssetImage("katakana/ch_img/" + data[2] + "_1.png", this.mImageView);
+
+
         this.mDescView.setText(spanString(data[5], data[1]));
     }
 

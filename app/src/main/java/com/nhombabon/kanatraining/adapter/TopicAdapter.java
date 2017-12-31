@@ -22,7 +22,6 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
     private Context context;
     private List<QuizObject> quizList;
     private int layoutResource;
-    private int chooseKana;
 
     public TopicAdapter(Context context, List<QuizObject> quizList, int layout) {
         this.context = context;

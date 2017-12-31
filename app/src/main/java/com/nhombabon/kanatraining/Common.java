@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.nhombabon.kanatraining.models.InforChoose;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -36,7 +38,10 @@ public class Common extends Application {
     public void loadCSV() {
         InputStream inputStream = null;
         try {
-            inputStream = getResources().getAssets().open("hiragana/data.csv");
+            if(InforChoose.getChooseKana()==0)
+                inputStream = getResources().getAssets().open("katakana/data.csv");
+            else
+                inputStream = getResources().getAssets().open("katakana/data.csv");
         } catch (IOException e) {
             e.printStackTrace();
         }

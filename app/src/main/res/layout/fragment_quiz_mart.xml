@@ -25,7 +25,8 @@
             android:textSize="@dimen/_14sdp"
             android:fontFamily="sans-serif"
             android:textStyle="italic"
-            android:checked="true"/>
+            android:checked="true"
+            />
         <Switch
             android:id="@+id/checkKatakana"
             android:layout_marginTop="@dimen/_7sdp"

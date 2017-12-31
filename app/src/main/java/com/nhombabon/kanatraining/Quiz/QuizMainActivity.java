@@ -25,6 +25,7 @@ import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.MainActivity;
 import com.nhombabon.kanatraining.QuizHomeActivity;
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -264,6 +265,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
                 fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.left_questions_button));
                 fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.right_questions_button));
                 fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.bottom_questions_button));
+
                 if (romaji1.equals("i")) {
                     fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.left_questions_button));
                 }
@@ -299,21 +301,42 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
     public void adjustTitle() {
         TextView titleView = (TextView) findViewById(R.id.change_title);
-        switch (this.mQuizType) {
-            case 0:
-                titleView.setText(getResources().getString(R.string.QuizQuestion1_ViewName));
-                return;
-            case 1:
-                titleView.setText(getResources().getString(R.string.QuizQuestion2_ViewName));
-                return;
-            case 2:
-                titleView.setText(getResources().getString(R.string.QuizQuestion3_ViewName));
-                return;
-            case 3:
-                titleView.setText(getResources().getString(R.string.QuizQuestion4_ViewName));
-                return;
-            default:
-                return;
+        if(InforChoose.getChooseKana()==0) {
+            switch (this.mQuizType) {
+                case 0:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion1_ViewName));
+                    return;
+                case 1:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion2_ViewName));
+                    return;
+                case 2:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion3_ViewName));
+                    return;
+                case 3:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion4_ViewName));
+                    return;
+                default:
+                    return;
+            }
+        }
+        else
+        {
+            switch (this.mQuizType) {
+                case 0:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion5_ViewName));
+                    return;
+                case 1:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion6_ViewName));
+                    return;
+                case 2:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion7_ViewName));
+                    return;
+                case 3:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion8_ViewName));
+                    return;
+                default:
+                    return;
+            }
         }
     }
 
@@ -360,7 +383,13 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     private void loadVoice() {
         String[] data = (String[]) ((Common) getApplication()).mCharDataList.get(this.mNowChar);
         if (this.mQuizType == 2) {
-            String filename = "hiragana/voice/" + data[2] + ".ogg";
+            String filename;
+
+            if(InforChoose.getChooseKana()==0)
+                filename = "hiragana/voice/" + data[2] + ".ogg";
+            else
+                filename = "katakana/voice/" + data[2] + ".ogg";
+
             Log.i("", "Voice File: " + filename);
             AssetManager am = getAssets();
             this.mSoundId = -1;
@@ -382,11 +411,18 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             Log.e("common.mCharDataList", "null");
             common.init();
         }
+
+
         String[] data = (String[]) common.mCharDataList.get(this.mNowChar);
+        Log.i("Nowchar", mNowChar.toString());
+
+
         adjustStar();
         makeChoiceList();
         new Timer().schedule(new C01432(), 1000);
+
         ((TextView) findViewById(R.id.question_number)).setText(String.format("%d/%d", new Object[]{Integer.valueOf(this.mNowIndex + 1), Integer.valueOf(10)}));
+
         switch (this.mQuizType) {
             case 0:
                 this.mMainView.setText(this.mNowChar);
@@ -411,7 +447,11 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         int column = Integer.parseInt(data[1]);
         switch (this.mQuizType) {
             case 0:
-                loadAssetImage("hiragana/ch_img/" + data[2] + "_1.png", this.mHintImageView);
+                if(InforChoose.getChooseKana()==0)
+                    loadAssetImage("hiragana/ch_img/" + data[2] + "_1.png", this.mHintImageView);
+                else
+                    loadAssetImage("katakana/ch_img/" + data[2] + "_1.png", this.mHintImageView);
+
                 this.mHintImageView.setVisibility(View.VISIBLE);
                 loadResBgImage(String.format("bg_cycle%02d", new Object[]{Integer.valueOf(column)}), this.mHintImageView);
                 this.mHintDescView.setVisibility(View.GONE);
@@ -561,7 +601,14 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             this.mPointArray[this.mNowIndex] = 1;
             am = getAssets();
             this.mSeSoundId = -1;
-            player = getAssetsMediaFile(getResources(), "hiragana/music/crrect.ogg");
+
+
+            if (InforChoose.getChooseKana()==0)
+                player = getAssetsMediaFile(getResources(), "hiragana/music/crrect.ogg");
+            else
+                player = getAssetsMediaFile(getResources(), "katakana/music/crrect.ogg");
+
+
             player.setOnCompletionListener(new C01443());
             player.start();
             this.mHandler.postDelayed(new C01454(), 1000);
@@ -572,7 +619,10 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         this.mMissView.setVisibility(View.VISIBLE);
         this.mMissCount++;
         am = getAssets();
+
         player = getAssetsMediaFile(getResources(), "hiragana/music/miss.ogg");
+
+
         player.setOnCompletionListener(new C01465());
         player.start();
         this.mHandler.postDelayed(new Runnable() {

@@ -11,6 +11,7 @@ import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -73,21 +74,42 @@ public class QuizSelectListActivity extends AppBaseActivity {
 
     public void adjustTitle() {
         TextView titleView = (TextView) findViewById(R.id.change_title);
-        switch (this.mQuizType) {
-            case 0:
-                titleView.setText(getResources().getString(R.string.Quiz_Question1));
-                return;
-            case 1:
-                titleView.setText(getResources().getString(R.string.Quiz_Question2));
-                return;
-            case 2:
-                titleView.setText(getResources().getString(R.string.Quiz_Question3));
-                return;
-            case 3:
-                titleView.setText(getResources().getString(R.string.Quiz_Question4));
-                return;
-            default:
-                return;
+        if(InforChoose.getChooseKana()==0) {
+            switch (this.mQuizType) {
+                case 0:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion1_ViewName));
+                    return;
+                case 1:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion2_ViewName));
+                    return;
+                case 2:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion3_ViewName));
+                    return;
+                case 3:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion4_ViewName));
+                    return;
+                default:
+                    return;
+            }
+        }
+        else
+        {
+            switch (this.mQuizType) {
+                case 0:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion5_ViewName));
+                    return;
+                case 1:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion6_ViewName));
+                    return;
+                case 2:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion7_ViewName));
+                    return;
+                case 3:
+                    titleView.setText(getResources().getString(R.string.QuizQuestion8_ViewName));
+                    return;
+                default:
+                    return;
+            }
         }
     }
 
@@ -134,6 +156,8 @@ public class QuizSelectListActivity extends AppBaseActivity {
 
     private void pickupQuizData() {
         int i=0;
+
+
         /*Must to add android:name"Common" to AndroidManifest.xml
         because Common inherit class Application*/
         Common common = (Common) getApplication();
