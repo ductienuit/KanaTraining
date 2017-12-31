@@ -19,6 +19,10 @@
         android:title="@string/ladder_board"
         android:icon="@drawable/trophy"/>
 
+    <item
+        android:id="@+id/alphabet"
+        android:title="@string/alphabet"
+        android:icon="@drawable/tab_types_active"/>
 
     <item
         android:id="@+id/settings"

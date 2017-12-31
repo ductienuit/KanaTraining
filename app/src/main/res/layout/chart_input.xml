@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:background="@color/white" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp" >
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="20sp" android:textColor="@color/white" android:gravity="center" android:id="@+id/chart_input_text_header" android:background="@drawable/bg_circle06_s" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="a" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/chart_input_text_a" android:background="@drawable/bg_circle07_s" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="あ" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+
+            <TextView
+                android:id="@+id/chart_input_text_i"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_circle07_s"
+                android:gravity="center"
+                android:text="い"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/chart_input_text_u" android:background="@drawable/bg_circle07_s" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="う" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/chart_input_text_e" android:background="@drawable/bg_circle07_s" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="え" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="18sp" android:textColor="@color/black" android:gravity="center" android:id="@+id/chart_input_text_o" android:background="@drawable/bg_circle07_s" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="お" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

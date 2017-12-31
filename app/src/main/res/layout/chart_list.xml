@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<include layout="@layout/navi_bar_black" />-->
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1.0">
+
+            <!--<ImageView-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:background="@drawable/img_vc"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginBottom="10dp" />-->
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp">
+
+                <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_vc"
+                        android:scaleType="fitCenter" />
+                </RelativeLayout>
+
+                <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1.0">
+                    <TextView android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:id="@+id/chart_input_text_a"
+                        android:background="@drawable/bg_circle01_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="a" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <TextView android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:id="@+id/chart_input_text_i"
+                        android:background="@drawable/bg_circle02_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="i" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:id="@+id/chart_input_text_u"
+                        android:background="@drawable/bg_circle03_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="u" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <TextView android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:id="@+id/chart_input_text_e"
+                        android:background="@drawable/bg_circle04_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="e" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+                    <TextView android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:id="@+id/chart_input_text_o"
+                        android:background="@drawable/bg_circle05_s"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="o" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/chart_list_main_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+        </LinearLayout>
+
+    <!--<ImageView-->
+        <!--android:id="@+id/guide_button"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:src="@drawable/btn_guidekun"-->
+        <!--android:scaleType="centerInside"-->
+        <!--android:layout_weight="1.0"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:onClick="clickGuideButton" />-->
+
+    </LinearLayout>
+</RelativeLayout>
