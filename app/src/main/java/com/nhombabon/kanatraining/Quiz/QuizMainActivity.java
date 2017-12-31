@@ -197,7 +197,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         this.mSeSoundId = -1;
         Intent intent = getIntent();
         this.mQuizType = intent.getIntExtra(AppConfig.RESULT_QUIZ_TYPE, 0);
-        findViewById(R.id.navigation_back_button).setVisibility(View.GONE);
+        findViewById(R.id.navigation_back_button).setVisibility(View.VISIBLE);
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.change_title));
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.time_title));
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.time_measurement));

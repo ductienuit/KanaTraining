@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
-import com.nhombabon.kanatraining.QuizResultActivity;
 import com.nhombabon.kanatraining.R;
 
 import java.util.ArrayList;

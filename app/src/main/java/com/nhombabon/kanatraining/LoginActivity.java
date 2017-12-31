@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent homeIntent = new Intent(LoginActivity.this, QuizSelectListActivity.class);
+                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(homeIntent);
             }
         });

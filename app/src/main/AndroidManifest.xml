@@ -40,7 +40,6 @@
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".QuizResultActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".QuizCategoryActivity" />
         <activity android:name=".HelpActivity" />

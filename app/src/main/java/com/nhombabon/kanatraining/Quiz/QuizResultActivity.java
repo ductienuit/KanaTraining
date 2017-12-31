@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +16,7 @@ import android.widget.TextView;
 import com.nhombabon.kanatraining.AppBaseActivity;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
+import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.R;
 
 import java.util.ArrayList;
@@ -171,7 +171,7 @@ public class QuizResultActivity extends AppBaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.quiz_result);
+        setContentView(R.layout.activity_quiz_result);
 
 
 
@@ -369,7 +369,7 @@ public class QuizResultActivity extends AppBaseActivity {
     public void clickQuizMenuButton(View v) {
         if (this.mIsAnimFinish.booleanValue()) {
             Intent it = new Intent();
-            it.setClass(this, QuizMainActivity.class);
+            it.setClass(this, HomeActivity.class);
             it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(it);
         }

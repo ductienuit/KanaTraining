@@ -3,15 +3,15 @@ package com.nhombabon.kanatraining.models;
 
 public class QuizObject {
 
-    private String imagePath;
+    private int imagePath;
     private String quizName;
 
-    public QuizObject(String imagePath, String quizName) {
+    public QuizObject(int imagePath, String quizName) {
         this.imagePath = imagePath;
         this.quizName = quizName;
     }
 
-    public String getImagePath() {
+    public int getImagePath() {
         return imagePath;
     }
 

@@ -32,6 +32,10 @@ public class QuizSelectListActivity extends AppBaseActivity {
             this.mSelectedList[i] = false;
         }
         this.mCanGoNext = false;
+
+        //Tắt nút dừng trong include
+        findViewById(R.id.quiz_top_button).setVisibility(View.GONE);
+
         fontChange(AppConfig.FONT_NAME_FIRA_LIGHT, (TextView) findViewById(R.id.change_title));
         fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.select_line_button1));
         fontChange(AppConfig.FONT_NAME_LETTER, (TextView) findViewById(R.id.select_line_button2));
@@ -43,6 +47,8 @@ public class QuizSelectListActivity extends AppBaseActivity {
         this.mStartButton = findViewById(R.id.start_quiz_button);
         this.mQuizType = getIntent().getIntExtra(AppConfig.SELECTED_QUIZ, 0);
         Log.i("", "mQuizType " + this.mQuizType);
+
+
         View similarView = findViewById(R.id.quiz_select_similar);
         View tableView = findViewById(R.id.quiz_select_table);
         View titleView = findViewById(R.id.select_title);
