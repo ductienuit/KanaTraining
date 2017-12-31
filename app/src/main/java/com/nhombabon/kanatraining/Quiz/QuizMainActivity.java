@@ -246,18 +246,18 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         this.mCountable = true;
         this.mNowStarView = (ImageView) findViewById(R.id.quiz_star_area).findViewWithTag(String.format("%d", new Object[]{Integer.valueOf(this.mNowIndex)}));
         Common common = (Common) getApplication();
-        String[] data = (String[]) common.mCharDataList.get(this.mNowChar);
+        String[] data = (String[]) common.getCharDataList(this.mNowChar);
         String romaji1 = "";
         String romaji2 = "";
         String romaji3 = "";
         if (this.mChoiceList.size() > 0) {
-            romaji1 = ((String[]) common.mCharDataList.get(this.mChoiceList.get(0)))[3];
+            romaji1 = ((String[]) common.getCharDataList(this.mChoiceList.get(0)))[3];
         }
         if (this.mChoiceList.size() > 1) {
-            romaji2 = ((String[]) common.mCharDataList.get(this.mChoiceList.get(1)))[3];
+            romaji2 = ((String[]) common.getCharDataList(this.mChoiceList.get(1)))[3];
         }
         if (this.mChoiceList.size() > 2) {
-            romaji3 = ((String[]) common.mCharDataList.get(this.mChoiceList.get(2)))[3];
+            romaji3 = ((String[]) common.getCharDataList(this.mChoiceList.get(2)))[3];
         }
         switch (this.mQuizType) {
             case 0:
@@ -381,7 +381,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     }
 
     private void loadVoice() {
-        String[] data = (String[]) ((Common) getApplication()).mCharDataList.get(this.mNowChar);
+        String[] data = (String[]) ((Common) getApplication()).getCharDataList(this.mNowChar);
         if (this.mQuizType == 2) {
             String filename;
 
@@ -407,13 +407,13 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             e.printStackTrace();
             common = (Common) getApplication();
         }
-        if (common.mCharDataList == null) {
+        if (common.getmCharDataList() == null) {
             Log.e("common.mCharDataList", "null");
             common.init();
         }
 
 
-        String[] data = (String[]) common.mCharDataList.get(this.mNowChar);
+        String[] data = (String[]) common.getCharDataList(this.mNowChar);
         Log.i("Nowchar", mNowChar.toString());
 
 
@@ -478,7 +478,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             Log.i("", "Choice List3 " + ((String) this.mChoiceList.get(2)));
         }
         if (this.mChoiceList.size() >= 1) {
-            String[] data1 = (String[]) common.mCharDataList.get(this.mChoiceList.get(0));
+            String[] data1 = (String[]) common.getCharDataList(this.mChoiceList.get(0));
             switch (this.mQuizType) {
                 case 0:
                     firstView.setText(data1[3]);
@@ -491,7 +491,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             }
         }
         if (this.mChoiceList.size() >= 2) {
-            String[] data2 = (String[]) common.mCharDataList.get(this.mChoiceList.get(1));
+            String[] data2 = (String[]) common.getCharDataList(this.mChoiceList.get(1));
             switch (this.mQuizType) {
                 case 0:
                     secondView.setText(data2[3]);
@@ -504,7 +504,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             }
         }
         if (this.mChoiceList.size() >= 3) {
-            String[] data3 = (String[]) common.mCharDataList.get(this.mChoiceList.get(2));
+            String[] data3 = (String[]) common.getCharDataList(this.mChoiceList.get(2));
             switch (this.mQuizType) {
                 case 0:
                     thirdView.setText(data3[3]);
@@ -523,7 +523,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
     private void makeChoiceList() {
         Common common = (Common) getApplication();
-        String[] data = (String[]) common.mCharDataList.get(this.mNowChar);
+        String[] data = (String[]) common.getCharDataList(this.mNowChar);
         this.mChoiceList.clear();
         int i;
         if (this.mQuizType == 3) {
@@ -531,9 +531,9 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             String[] words = nearWord.split("/");
             Log.i("", "Near Word " + nearWord);
             for (Object indexOf : words) {
-                int index = common.mCharEnList.indexOf(indexOf);
+                int index = common.getIndexOfCharEnList(indexOf);
                 if (index >= 0) {
-                    this.mChoiceList.add((String) common.mCharList.get(index));
+                    this.mChoiceList.add((String) common.getmCharList().get(index));
                 }
             }
         } else {

@@ -46,14 +46,14 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if( quizObject.getQuizName()=="Read the hiragana")
+                if( quizObject.getQuizName()=="Read the kana")
                 {
                     Intent it = new Intent();
                     it.putExtra(AppConfig.SELECTED_QUIZ, 0);
                     it.setClass(context, QuizSelectListActivity.class);
                     context.startActivity(it);
                 }
-                else if( quizObject.getQuizName()=="Choose the hiragana")
+                else if( quizObject.getQuizName()=="Choose the kana")
                 {
                     Intent it = new Intent();
                     it.putExtra(AppConfig.SELECTED_QUIZ, 1);
@@ -67,7 +67,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
                     it.setClass(context, QuizSelectListActivity.class);
                     context.startActivity(it);
                 }
-                else if( quizObject.getQuizName()=="Similar hiragana")
+                else if( quizObject.getQuizName()=="Similar kana")
                 {
                     Intent it = new Intent();
                     it.putExtra(AppConfig.SELECTED_QUIZ, 3);

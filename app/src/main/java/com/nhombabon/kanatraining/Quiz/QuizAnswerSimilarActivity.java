@@ -103,18 +103,25 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
         this.mQuizWordList = intent.getStringArrayListExtra(AppConfig.RESULT_QUIZ_WORD_LIST);
         this.mChoiceList = intent.getStringArrayListExtra(AppConfig.RESULT_CHOICE_LIST);
         ((TextView) findViewById(R.id.change_title)).setText(getResources().getString(R.string.QuizQuestion4_ViewName));
+
+
+
         Common common = (Common) getApplication();
         calcNowIndex();
         this.mNowChar = (String) this.mQuizWordList.get(this.mNowIndex);
         if (this.mChoiceList.size() > 0) {
-            data = (String[]) common.mCharDataList.get(this.mChoiceList.get(0));
+            data = (String[]) common.getCharDataList(this.mChoiceList.get(0));
             this.mFirstTextEnView.setText(data[3]);
             this.mFirstCatchView.setText(spanString(data[5], "0"));
             column = Integer.parseInt(data[1]);
             bgname = String.format("bg_circle%02d_m", new Object[]{Integer.valueOf(column)});
-            if (data[4].equalsIgnoreCase("ん")) {
+
+
+            if (data[4].equalsIgnoreCase("ん") || data[4].equalsIgnoreCase("ン")) {
                 bgname = "bg_circle07_m";
             }
+
+
             loadResBgImage(bgname, this.mFirstImageBaseView);
             loadAssetImage(String.format("ch_img/%s_1.png", new Object[]{data[2]}), this.mFirstImageView);
             this.mFirstTextJpView.setText(data[4]);
@@ -126,16 +133,20 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
                 this.mFirstBaseView.setBackgroundResource(R.color.pink);
             }
         }
-        if (common.mCharDataList.size() > 0) {
+        if (common.getmCharDataList().size() > 0) {
             if (this.mChoiceList.size() > 1) {
-                data = (String[]) common.mCharDataList.get(this.mChoiceList.get(1));
+                data = (String[]) common.getCharDataList(this.mChoiceList.get(1));
                 this.mSecondTextEnView.setText(data[3]);
                 this.mSecondCatchView.setText(spanString(data[5], "0"));
                 column = Integer.parseInt(data[1]);
                 bgname = String.format("bg_circle%02d_m", new Object[]{Integer.valueOf(column)});
-                if (data[4].equalsIgnoreCase("ん")) {
+
+
+                if (data[4].equalsIgnoreCase("ん") || data[4].equalsIgnoreCase("ン")) {
                     bgname = "bg_circle07_m";
                 }
+
+
                 loadResBgImage(bgname, this.mSecondImageBaseView);
                 loadAssetImage(String.format("ch_img/%s_1.png", new Object[]{data[2]}), this.mSecondImageView);
                 this.mSecondTextJpView.setText(data[4]);
@@ -148,14 +159,18 @@ public class QuizAnswerSimilarActivity extends AppBaseActivity {
                 }
             }
             if (this.mChoiceList.size() > 2) {
-                data = (String[]) common.mCharDataList.get(this.mChoiceList.get(2));
+                data = (String[]) common.getCharDataList(this.mChoiceList.get(2));
                 this.mThirdTextEnView.setText(data[3]);
                 this.mThirdCatchView.setText(spanString(data[5], "0"));
                 column = Integer.parseInt(data[1]);
                 bgname = String.format("bg_circle%02d_m", new Object[]{Integer.valueOf(column)});
-                if (data[4].equalsIgnoreCase("ん")) {
+
+
+                if (data[4].equalsIgnoreCase("ん") || data[4].equalsIgnoreCase("ン")) {
                     bgname = "bg_circle07_m";
                 }
+
+
                 loadResBgImage(bgname, this.mThirdImageBaseView);
                 loadAssetImage(String.format("ch_img/%s_1.png", new Object[]{data[2]}), this.mThirdImageView);
                 this.mThirdTextJpView.setText(data[4]);

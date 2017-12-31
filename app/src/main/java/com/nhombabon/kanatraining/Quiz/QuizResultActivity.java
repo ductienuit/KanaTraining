@@ -18,6 +18,7 @@ import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.Common;
 import com.nhombabon.kanatraining.HomeActivity;
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -266,20 +267,24 @@ public class QuizResultActivity extends AppBaseActivity {
                 this.mPointArray[i] = 0;
             }
             Common common = (Common) getApplication();
-            if (common.mColKeyList == null) {
+            if (common.getmColKeyList() == null) {
                 common.init();
             }
             ArrayList<String> targetList = new ArrayList();
             ArrayList<String> quizWordList = new ArrayList();
-            for (i = 0; i < common.mColKeyList.size(); i++) {
-                Log.i("", "Key " + ((String) common.mColKeyList.get(i)));
+            for (i = 0; i < common.getmColKeyList().size(); i++) {
+                Log.i("", "Key " + ((String) common.getColKeyList(i)));
             }
             for (i = 0; i < 5; i++) {
                 if (common.mSelectedList[i]) {
                     int di;
+
+
                     String[] d;
-                    ArrayList<String[]> data1 = (ArrayList) common.mColDataList.get((String) common.mColKeyList.get((i * 2) + 0));
-                    ArrayList<String[]> data2 = (ArrayList) common.mColDataList.get((String) common.mColKeyList.get((i * 2) + 1));
+                    ArrayList<String[]> data1 = (ArrayList) common.getColDataList((String) common.getColKeyList((i * 2) + 0));
+                    ArrayList<String[]> data2 = (ArrayList) common.getColDataList((String) common.getColKeyList((i * 2) + 1));
+
+
                     for (di = 0; di < data1.size(); di++) {
                         d = (String[]) data1.get(di);
                         if (this.mQuizType != 3) {
@@ -297,7 +302,14 @@ public class QuizResultActivity extends AppBaseActivity {
                         }
                     }
                     if (i == 4) {
-                        d = (String[]) common.mCharDataList.get("ん");
+
+
+                        if(InforChoose.getChooseKana()==0)
+                            d = (String[]) common.getCharDataList("ん");
+                        else
+                            d = (String[]) common.getCharDataList("ン");
+
+
                         if (this.mQuizType != 3) {
                             targetList.add(d[4]);
                         } else if (d.length > 7 && !d[7].equals("")) {

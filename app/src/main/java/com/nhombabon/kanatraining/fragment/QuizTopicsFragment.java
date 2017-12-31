@@ -83,10 +83,10 @@ public class QuizTopicsFragment extends Fragment {
 
     public List<QuizObject> getTestData() {
         List<QuizObject> testData = new ArrayList<>();
-        testData.add(new QuizObject(R.drawable.ic_read, "Read the hiragana"));
-        testData.add(new QuizObject(R.drawable.ic_choose, "Choose the hiragana"));
+        testData.add(new QuizObject(R.drawable.ic_read, "Read the kana"));
+        testData.add(new QuizObject(R.drawable.ic_choose, "Choose the kana"));
         testData.add(new QuizObject(R.drawable.ic_listening, "Listen & Choose"));
-        testData.add(new QuizObject(R.drawable.ic_similar, "Similar hiragana"));
+        testData.add(new QuizObject(R.drawable.ic_similar, "Similar kana"));
         return testData;
     }
 

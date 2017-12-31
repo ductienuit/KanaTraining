@@ -20,11 +20,21 @@ import java.util.List;
 public class Common extends Application {
     private static final String TAG = "Common";
 
-    public HashMap<String, String[]> mCharDataList;
-    public ArrayList<String> mCharEnList;
-    public ArrayList<String> mCharList;
-    public HashMap<String, ArrayList<String[]>> mColDataList;
-    public ArrayList<String> mColKeyList;
+    private HashMap<String, String[]> mCharDataListHiragana;
+    private HashMap<String, String[]> mCharDataListKatakana;
+
+    public ArrayList<String> mCharEnListHiragana;
+    public ArrayList<String> mCharListHiragana;
+    public HashMap<String, ArrayList<String[]>> mColDataListHiragana;
+    public ArrayList<String> mColKeyListHiragana;
+
+
+    public ArrayList<String> mCharEnListKatakana;
+    public ArrayList<String> mCharListKatakana;
+    public HashMap<String, ArrayList<String[]>> mColDataListKatakana;
+    public ArrayList<String> mColKeyListKatakana;
+
+
     SharedPreferences.Editor mEditor;
     SharedPreferences mPrefs;
     public boolean[] mSelectedList;
@@ -34,30 +44,35 @@ public class Common extends Application {
         loadCSV();
     }
 
-    //Chua chinh load hiragana hay katakana
     public void loadCSV() {
-        InputStream inputStream = null;
+        InputStream inputStreamHiragana = null;
+        InputStream inputStreamKatakana = null;
         try {
-            if(InforChoose.getChooseKana()==0)
-                inputStream = getResources().getAssets().open("katakana/data.csv");
-            else
-                inputStream = getResources().getAssets().open("katakana/data.csv");
+            inputStreamHiragana = getResources().getAssets().open("hiragana/data.csv");
+            inputStreamKatakana = getResources().getAssets().open("katakana/data.csv");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         //Read file CSV to List<String[]> by ReadCSVFile
-        analyzeCSV(new ReadCSVFile(inputStream).read());
+        analyzeCSVHira(new ReadCSVFile(inputStreamHiragana).read());
+
+        //Read file CSV to List<String[]> by ReadCSVFile
+        analyzeCSVKata(new ReadCSVFile(inputStreamKatakana).read());
     }
 
-    public void analyzeCSV(List<String[]> list) {
+    public void analyzeCSVHira(List<String[]> list) {
         String colKey = "";
         String key = "";
         String en = "";
-        this.mColKeyList = new ArrayList();
-        this.mColDataList = new HashMap();
-        this.mCharDataList = new HashMap();
-        this.mCharList = new ArrayList();
-        this.mCharEnList = new ArrayList();
+
+
+        this.mColKeyListHiragana = new ArrayList();
+        this.mColDataListHiragana = new HashMap();
+        this.mCharDataListHiragana = new HashMap();
+        this.mCharListHiragana = new ArrayList();
+        this.mCharEnListHiragana = new ArrayList();
 
         ArrayList<String[]> colDataList = new ArrayList<String[]>();
         String prevLineKey = "";
@@ -70,26 +85,71 @@ public class Common extends Application {
                 if (!lineKey.equals(prevLineKey)) {
                     if (prevLineKey.length() > 0) {
                         Log.i(TAG, "3.ChangeLine: " + colKey);
-                        this.mColDataList.put(colKey,  colDataList);
+                        this.mColDataListHiragana.put(colKey,  colDataList);
                         colDataList = new ArrayList();
                     }
                     colKey = line[4];
                     Log.i(TAG, "4.ColKey: " + colKey);
-                    this.mColKeyList.add(colKey);
+                    this.mColKeyListHiragana.add(colKey);
                 }
                 key = line[4];
                 Log.i(TAG, "5.key: " + colKey);
                 en = line[3];
                 Log.i(TAG, "6.en: " + colKey);
-                this.mCharList.add(key);
-                this.mCharEnList.add(en);
+                this.mCharListHiragana.add(key);
+                this.mCharEnListHiragana.add(en);
                 colDataList.add(line);
-                this.mCharDataList.put(key, line);
+                this.mCharDataListHiragana.put(key, line);
                 prevLineKey = lineKey;
             }
         }
         Log.i(TAG, "Final:ChangeLine " + colKey);
-        this.mColDataList.put(colKey, colDataList);
+        this.mColDataListHiragana.put(colKey, colDataList);
+    }
+
+    public void analyzeCSVKata(List<String[]> list) {
+        String colKey = "";
+        String key = "";
+        String en = "";
+
+
+        this.mColKeyListKatakana = new ArrayList();
+        this.mColDataListKatakana = new HashMap();
+        this.mCharDataListKatakana = new HashMap();
+        this.mCharListKatakana = new ArrayList();
+        this.mCharEnListKatakana = new ArrayList();
+
+        ArrayList<String[]> colDataList = new ArrayList<String[]>();
+        String prevLineKey = "";
+        for (int i = 0; i < list.size(); i++) {
+            String[] line = (String[]) list.get(i);
+            Log.i(TAG, "1.Line: " + line);
+            if (line.length > 3) {
+                String lineKey = line[0];
+                Log.i(TAG, "2.LineKey: " + lineKey);
+                if (!lineKey.equals(prevLineKey)) {
+                    if (prevLineKey.length() > 0) {
+                        Log.i(TAG, "3.ChangeLine: " + colKey);
+                        this.mColDataListKatakana.put(colKey,  colDataList);
+                        colDataList = new ArrayList();
+                    }
+                    colKey = line[4];
+                    Log.i(TAG, "4.ColKey: " + colKey);
+                    this.mColKeyListKatakana.add(colKey);
+                }
+                key = line[4];
+                Log.i(TAG, "5.key: " + colKey);
+                en = line[3];
+                Log.i(TAG, "6.en: " + colKey);
+                this.mCharListKatakana.add(key);
+                this.mCharEnListKatakana.add(en);
+                colDataList.add(line);
+                this.mCharDataListKatakana.put(key, line);
+                prevLineKey = lineKey;
+            }
+        }
+        Log.i(TAG, "Final:ChangeLine " + colKey);
+        this.mColDataListKatakana.put(colKey, colDataList);
     }
 
     //Init sharedPresferences in android, like cache
@@ -105,5 +165,65 @@ public class Common extends Application {
 
     public String getPref(String key) {
         return this.mPrefs.getString(key, "");
+    }
+
+
+    public ArrayList<String> getmCharList() {
+        if(InforChoose.getChooseKana()==0)
+            return mCharListHiragana;
+        return  mCharListKatakana;
+    }
+
+    public String[] getCharDataList(String key)
+    {
+        if(InforChoose.getChooseKana()==0)
+            return mCharDataListHiragana.get(key);
+        return  mCharDataListKatakana.get(key);
+    }
+
+    public HashMap<String, String[]> getmCharDataList()
+    {
+        if(InforChoose.getChooseKana()==0)
+            return mCharDataListHiragana;
+        return  mCharDataListKatakana;
+    }
+
+    public ArrayList<String[]> getColDataList(String key)
+    {
+        if(InforChoose.getChooseKana()==0)
+            return mColDataListHiragana.get(key);
+        return mColDataListKatakana.get(key);
+    }
+
+    public HashMap<String, ArrayList<String[]>> getmColDataList() {
+        if(InforChoose.getChooseKana()==0)
+            return mColDataListHiragana;
+        return mColDataListKatakana;
+    }
+
+    public int getIndexOfCharEnList(Object object) {
+        if(InforChoose.getChooseKana()==0)
+            return mCharEnListHiragana.indexOf(object);
+        return mCharEnListKatakana.indexOf(object);
+    }
+
+    public ArrayList<String> getmCharEnList() {
+        if(InforChoose.getChooseKana()==0)
+            return mCharEnListHiragana;
+        return mCharEnListKatakana;
+    }
+
+    public String getColKeyList(int key)
+    {
+        if(InforChoose.getChooseKana()==0)
+            return mColKeyListHiragana.get(key);
+        return  mColKeyListKatakana.get(key);
+    }
+
+    public ArrayList<String> getmColKeyList()
+    {
+        if(InforChoose.getChooseKana()==0)
+            return mColKeyListHiragana;
+        return  mColKeyListHiragana;
     }
 }

@@ -184,11 +184,13 @@ public class QuizAnswerActivity extends AppBaseActivity {
             e.printStackTrace();
             common = (Common) getApplication();
         }
-        if (common.mCharDataList == null) {
+        if (common.getmCharDataList() == null) {
             Log.e("common.mCharDataList", "null");
             common.init();
         }
-        String[] data = (String[]) common.mCharDataList.get(this.mNowChar);
+        String[] data = (String[]) common.getCharDataList(this.mNowChar);
+
+
         this.mBaseView.setBackgroundColor(colorWithHex(data[6]));
         int column = Integer.parseInt(data[1]);
         loadResBgImage(String.format("bg_cycle_answer_s%02d", new Object[]{Integer.valueOf(column)}), this.mJpView);

@@ -161,22 +161,22 @@ public class QuizSelectListActivity extends AppBaseActivity {
         /*Must to add android:name"Common" to AndroidManifest.xml
         because Common inherit class Application*/
         Common common = (Common) getApplication();
-        if (common.mColKeyList == null) {
+        if (common.getmColKeyList() == null) {
             common.init();
         }
         ArrayList<String> targetList = new ArrayList<String>();
         ArrayList<String> quizWordList = new ArrayList<String>();
-        for (i = 0; i < common.mColKeyList.size(); i++) {
-            Log.i("", "Key " + ((String) common.mColKeyList.get(i)));
+        for (i = 0; i < common.getmColKeyList().size(); i++) {
+            Log.i("", "Key " + ((String) common.getmColKeyList().get(i)));
         }
         for (i = 0; i < 5; i++) {
             if (this.mSelectedList[i]) {
                 int di;
                 String[] d;
                 ArrayList<String[]> data1 =
-                        (ArrayList) common.mColDataList.get((String) common.mColKeyList.get((i * 2) + 0));
+                        (ArrayList) common.getColDataList((String) common.getColKeyList((i * 2) + 0));
                 ArrayList<String[]> data2 =
-                        (ArrayList) common.mColDataList.get((String) common.mColKeyList.get((i * 2) + 1));
+                        (ArrayList) common.getColDataList((String) common.getColKeyList((i * 2) + 1));
                 for (di = 0; di < data1.size(); di++) {
                     d = (String[]) data1.get(di);
                     if (this.mQuizType != 3) {
@@ -194,7 +194,15 @@ public class QuizSelectListActivity extends AppBaseActivity {
                     }
                 }
                 if (i == 4) {
-                    d = (String[]) common.mCharDataList.get("ん");
+
+
+                    if(InforChoose.getChooseKana()==0)
+                        d = (String[]) common.getCharDataList("ん");
+                    else
+                        d = (String[]) common.getCharDataList("ン");
+
+
+
                     if (this.mQuizType != 3) {
                         targetList.add(d[4]);
                     } else if (d.length > 7 && !d[7].equals("")) {
