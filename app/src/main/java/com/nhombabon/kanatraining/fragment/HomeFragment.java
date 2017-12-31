@@ -52,10 +52,10 @@ public class HomeFragment extends Fragment{
 
     public List<QuizObject> getTestData() {
         List<QuizObject> testData = new ArrayList<>();
-        testData.add(new QuizObject("", "General Knowledge"));
-        testData.add(new QuizObject("", "Entertainment"));
-        testData.add(new QuizObject("", "History"));
-        testData.add(new QuizObject("", "Sports"));
+        testData.add(new QuizObject(1, "General Knowledge"));
+        testData.add(new QuizObject(1, "Entertainment"));
+        testData.add(new QuizObject(1, "History"));
+        testData.add(new QuizObject(1, "Sports"));
         return testData;
     }
 }

@@ -3,6 +3,7 @@
     package="com.nhombabon.kanatraining">
 
     <application
+        android:name=".Common"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -39,12 +40,15 @@
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".QuizResultActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".QuizCategoryActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".AppBaseActivity" />
-
+        <activity android:name=".Quiz.QuizSelectListActivity" />
+        <activity android:name=".Quiz.QuizMainActivity" />
+        <activity android:name=".Quiz.QuizAnswerSimilarActivity" />
+        <activity android:name=".Quiz.QuizAnswerActivity" />
+        <activity android:name=".Quiz.QuizResultActivity"></activity>
     </application>
 
 </manifest>

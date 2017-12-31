@@ -17,13 +17,13 @@ public class QuizHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_home);
 
-        answerButton = (Button)findViewById(R.id.answer_four);
-        answerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent result = new Intent(QuizHomeActivity.this, QuizResultActivity.class);
-                startActivity(result);
-            }
-        });
+//        answerButton = (Button)findViewById(R.id.answer_four);
+//        answerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent result = new Intent(QuizHomeActivity.this, QuizResultActivity.class);
+//                startActivity(result);
+//            }
+//        });
     }
 }

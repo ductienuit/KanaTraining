@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.nhombabon.kanatraining.Quiz.QuizSelectListActivity;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
@@ -33,7 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         forgottenPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
 

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/quiz_answer_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:background="@drawable/bg_underline">
+
+        <include layout="@layout/navi_bar_black" />
+
+        <include
+            android:id="@+id/quiz_answer_sim_first"
+            layout="@layout/quiz_answer_base" />
+
+        <include
+            android:id="@+id/quiz_answer_sim_second"
+            layout="@layout/quiz_answer_base" />
+
+        <include
+            android:id="@+id/quiz_answer_sim_third"
+            layout="@layout/quiz_answer_base" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/answer_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_cycle07"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="ClickAnswerNext"
+        android:text="@string/QuizAnswer_Button"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/pop_quiz_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whitealpha"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/pop_ans_sim_blur_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--Dialog quit-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/quiz_stop_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="100dp"
+                android:text="@string/QuizStopPop_Guide"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/btn_frame01"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clickTopNo"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/btn_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no_Button"
+                        android:textColor="@drawable/color_reply"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1.0"
+                    android:background="@drawable/btn_frame01"
+                    android:clickable="true"
+                    android:gravity="top|bottom|left|right|center_vertical|fill_vertical|center_horizontal|fill_horizontal|center|fill|start|end"
+                    android:onClick="clickTopYes"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/btn_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes_Button"
+                        android:textColor="@drawable/color_reply"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

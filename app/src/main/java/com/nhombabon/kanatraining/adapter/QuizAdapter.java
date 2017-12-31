@@ -35,7 +35,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizViewHolder>{
     public void onBindViewHolder(QuizViewHolder holder, int position) {
         QuizObject quizObject = quizList.get(position);
         holder.quizName.setText(quizObject.getQuizName());
-        //holder.quizImage.setImageResource(R.drawable.profile);
+        //holder.quizImage.setImageResource(android.R.drawable.profile);
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

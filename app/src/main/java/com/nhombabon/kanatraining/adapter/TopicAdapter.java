@@ -3,12 +3,16 @@ package com.nhombabon.kanatraining.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.nhombabon.kanatraining.QuizCategoryActivity;
+import com.nhombabon.kanatraining.AppConfig;
+import com.nhombabon.kanatraining.LoginActivity;
+import com.nhombabon.kanatraining.Quiz.QuizSelectListActivity;
 import com.nhombabon.kanatraining.models.QuizObject;
 
 import java.util.List;
@@ -33,16 +37,44 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
 
     @Override
     public void onBindViewHolder(TopicViewHolder holder, int position) {
-        QuizObject quizObject = quizList.get(position);
+        final QuizObject quizObject = quizList.get(position);
         holder.quizName.setText(quizObject.getQuizName());
-        //holder.quizImage.setImageResource(R.drawable.profile);
+        holder.quizImage.setImageResource(quizObject.getImagePath());
+
+
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent profileIntent = new Intent(context, QuizCategoryActivity.class);
-                context.startActivity(profileIntent);
-            }
+                if( quizObject.getQuizName()=="Read the kana")
+                {
+                    Intent it = new Intent();
+                    it.putExtra(AppConfig.SELECTED_QUIZ, 0);
+                    it.setClass(context, QuizSelectListActivity.class);
+                    context.startActivity(it);
+                }
+                else if( quizObject.getQuizName()=="Choose the kana")
+                {
+                    Intent it = new Intent();
+                    it.putExtra(AppConfig.SELECTED_QUIZ, 1);
+                    it.setClass(context, QuizSelectListActivity.class);
+                    context.startActivity(it);
+                }
+               else  if( quizObject.getQuizName()=="Listen & Choose")
+                {
+                    Intent it = new Intent();
+                    it.putExtra(AppConfig.SELECTED_QUIZ, 2);
+                    it.setClass(context, QuizSelectListActivity.class);
+                    context.startActivity(it);
+                }
+                else if( quizObject.getQuizName()=="Similar kana")
+                {
+                    Intent it = new Intent();
+                    it.putExtra(AppConfig.SELECTED_QUIZ, 3);
+                    it.setClass(context, QuizSelectListActivity.class);
+                    context.startActivity(it);
+                }
+        }
         });
     }
 
@@ -50,5 +82,6 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
     public int getItemCount() {
         return quizList.size();
     }
+
 }
 
