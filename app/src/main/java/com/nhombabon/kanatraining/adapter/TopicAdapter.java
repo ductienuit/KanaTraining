@@ -22,6 +22,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
     private Context context;
     private List<QuizObject> quizList;
     private int layoutResource;
+    private int chooseKana;
 
     public TopicAdapter(Context context, List<QuizObject> quizList, int layout) {
         this.context = context;
@@ -40,6 +41,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
         final QuizObject quizObject = quizList.get(position);
         holder.quizName.setText(quizObject.getQuizName());
         holder.quizImage.setImageResource(quizObject.getImagePath());
+
+
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override

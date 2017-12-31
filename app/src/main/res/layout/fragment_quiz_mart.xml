@@ -2,12 +2,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="@dimen/_4sdp"
     tools:context="com.nhombabon.kanatraining.fragment.QuizTopicsFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose kana:"
+            android:textStyle="italic"
+            android:textSize="@dimen/_17sdp"/>
+        <Switch
+            android:id="@+id/checkHiragana"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hiragana"
+            android:textSize="@dimen/_14sdp"
+            android:fontFamily="sans-serif"
+            android:textStyle="italic"
+            android:checked="true"/>
+        <Switch
+            android:id="@+id/checkKatakana"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            android:fontFamily="sans-serif"
+            android:text="Katakana"/>
+    </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/quiz_topic"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
