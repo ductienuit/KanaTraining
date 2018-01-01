@@ -47,7 +47,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:11.8.0'
     implementation 'com.google.android.gms:play-services-auth:11.8.0'
 
-    implementation 'com.codemybrainsout.onboarding:onboarder:1.0.3'
+    implementation 'com.codemybrainsout.onboarding:onboarder:1.0.4'
 
     implementation 'com.intuit.sdp:sdp-android:1.0.3'
 
@@ -76,5 +76,6 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
 }
+
 
 apply plugin: 'com.google.gms.google-services'
