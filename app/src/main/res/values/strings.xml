@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Kana Training</string>
-    <string name="first_title">Complete Quiz</string>
+    <string name="first_title">Kana Training</string>
     <string name="first_description">Learning made easy through fun</string>
     <string name="second_description">Compete with your peers and show off with your result</string>
     <string name="third_description">Educative and addictive quiz game for you</string>

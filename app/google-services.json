@@ -1,35 +1,43 @@
 {
   "project_info": {
-    "project_number": "1026887394558",
-    "firebase_url": "https://kana-training.firebaseio.com",
-    "project_id": "kana-training",
-    "storage_bucket": "kana-training.appspot.com"
+    "project_number": "520099565237",
+    "firebase_url": "https://kana-training-3958e.firebaseio.com",
+    "project_id": "kana-training-3958e",
+    "storage_bucket": "kana-training-3958e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1026887394558:android:e332f6e5215865eb",
+        "mobilesdk_app_id": "1:520099565237:android:e332f6e5215865eb",
         "android_client_info": {
           "package_name": "com.nhombabon.kanatraining"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1026887394558-ds2ulq363t2s4essf9ef9glehcop0ng8.apps.googleusercontent.com",
+          "client_id": "520099565237-43aqgjfmkt9lplv2q5j384hk66f8h467.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.nhombabon.kanatraining",
-            "certificate_hash": "b161507216fd7ba394a87f9dba75c5a75fd7365d"
+            "certificate_hash": "b3db846a576add64d2da5661aae5d9dd405b2ccc"
           }
         },
         {
-          "client_id": "1026887394558-9qignspgavq1c41vj58pbqvnlvkqlhac.apps.googleusercontent.com",
+          "client_id": "520099565237-89kr0723bcmbqu0dcopjn2nlf6aqesfn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nhombabon.kanatraining",
+            "certificate_hash": "bf1be14e03ddb520215ba9f23f2f08fdec87f221"
+          }
+        },
+        {
+          "client_id": "520099565237-blcja745qsrubm7sk28bpi4cc6pbibf2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyACPrAyqPQ01jW3ln3SlYNjtBfJsFuAFF4"
+          "current_key": "AIzaSyCtAc3KNdRqaudCYrBdUpHluDkbb7xh2Yc"
         }
       ],
       "services": {
@@ -40,7 +48,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "1026887394558-9qignspgavq1c41vj58pbqvnlvkqlhac.apps.googleusercontent.com",
+              "client_id": "520099565237-blcja745qsrubm7sk28bpi4cc6pbibf2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

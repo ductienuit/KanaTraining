@@ -35,6 +35,8 @@ import java.util.Arrays;
 
 import mehdi.sakout.fancybuttons.FancyButton;
 
+import static com.facebook.FacebookSdk.sdkInitialize;
+
 public class LoginOptionActivity extends BaseActivity {
 
     private static final String TAG = LoginOptionActivity.class.getSimpleName();
