@@ -1,6 +1,7 @@
 package com.nhombabon.kanatraining.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,9 +12,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.nhombabon.kanatraining.IntroActivity;
 import com.nhombabon.kanatraining.R;
 import com.nhombabon.kanatraining.adapter.QuizAdapter;
 import com.nhombabon.kanatraining.models.QuizObject;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +28,7 @@ public class HomeFragment extends Fragment{
 
     private TextView playerName, playerStatus, playerScore;
 
-    private Button quizStartButton;
+    private Button logOutButton;
 
     public HomeFragment() {
     }
@@ -38,6 +42,16 @@ public class HomeFragment extends Fragment{
         playerName = (TextView)view.findViewById(R.id.player_name);
         playerStatus = (TextView)view.findViewById(R.id.player_status);
         playerScore = (TextView)view.findViewById(R.id.player_score);
+        logOutButton = (Button)view.findViewById(R.id.btn_logout);
+
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+
+                startActivity(new Intent(getActivity(), IntroActivity.class));
+            }
+        });
 
         RecyclerView selectedQuizRecyclerView = (RecyclerView)view.findViewById(R.id.selected_quizzes);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 4);

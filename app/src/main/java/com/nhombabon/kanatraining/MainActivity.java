@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity {
         super.onStart();
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         if (firebaseUser != null) {
-            startActivity(new Intent(this, IntroActivity.class));
+            startActivity(new Intent(this, HomeActivity.class));
         } else {
             startActivity(new Intent(this, IntroActivity.class));
         }
