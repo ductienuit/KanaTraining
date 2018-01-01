@@ -5,15 +5,9 @@
     <string name="second_description">Compete with your peers and show off with your result</string>
     <string name="third_description">Educative and addictive quiz game for you</string>
 
-    <string name="facebook_app_id">1542894162412221</string>
+    <string name="facebook_app_id">1972715876321373</string>
+    <string name="fb_login_protocol_scheme">fb1972715876321373</string>
 
-    <string name="QuizResult_Clear1">Perfect!</string>
-    <string name="QuizResult_Clear2">Good!</string>
-    <string name="QuizResult_Clear3">You can do it!</string>
-    <string name="QuizResult_Score">Score</string>
-    <string name="QuizResult_BestTime">BestTime</string>
-    <string name="QuizResult_Button2">Try Again</string>
-    <string name="QuizResult_Button1">Quiz Menu</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_name">Fullname</string>
@@ -24,8 +18,11 @@
     <string name="welcome">Welcome</string>
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Fullname</string>
-    <string name="already_registered_login">Already registered! login</string>
+    <string name="already_registered_login">Already registered! Login</string>
     <string name="no_registration">If used without registration your score will not be stored</string>
+    <string name="email_verification">Email id not verified. Please verify email id first.</string>
+    <string name="forgotten_password">We will send you instructions on how to reset your password by email</string>
+
     <string name="rule_one">1. Answer the question as fast as you can to save time</string>
     <string name="rule_two">2. You have a maximum of 15 seconds to answer each question</string>
     <string name="rule_three">3. You have 3 lives and after that you loss the quiz game. See testing the quiz also</string>
@@ -38,6 +35,7 @@
 
     <string name="language_prompt">Choose a language</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="sign_in">SIGN IN</string>
     <string name="has_registered_login">Has registered. Login</string>
 
     <string-array name="language_arrays">
@@ -59,6 +57,13 @@
     <string name="sound">Sound</string>
     <string name="music">Music</string>
     <string name="language">Language</string>
+    <string name="loading">Loading…</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_forgot_password">ForgotPasswordActivity</string>
     <string name="activity_animation_duration">100</string>
     <string name="alphabet">Alphabet</string>
     <string name="IllustTop_ViewName">Kana Training</string>

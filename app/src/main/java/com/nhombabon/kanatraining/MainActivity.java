@@ -1,5 +1,6 @@
 package com.nhombabon.kanatraining;
-//Test commit
+
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -12,12 +13,12 @@ import com.nhombabon.kanatraining.models.InforChoose;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends AhoyOnboarderActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
 
         //Tạo singleton các giá trị âm thanh, lựa chọn bảng chữ cái, điểm sau mỗi lần để dễ truy cập
         InforChoose.getInstance();
@@ -51,6 +52,12 @@ public class MainActivity extends AhoyOnboarderActivity {
         setFinishButtonTitle("Get Started");
 
         setFinishButtonDrawableStyle(ContextCompat.getDrawable(this, R.drawable.rounded_button));
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
     }
 
     @Override
@@ -58,4 +65,5 @@ public class MainActivity extends AhoyOnboarderActivity {
         Intent showSignUpIntent = new Intent(MainActivity.this, LoginOptionActivity.class);
         startActivity(showSignUpIntent);
     }
+
 }

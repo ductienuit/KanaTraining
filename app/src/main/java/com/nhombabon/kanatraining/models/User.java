@@ -5,12 +5,12 @@ import java.io.Serializable;
 
 public class User implements Serializable {
 
-    public int id;
-    public String fullName;
-    public String email;
-    public String password;
-    public String createdAt;
-    public String updatedAt;
+    private int id;
+    private String fullName;
+    private String email;
+    private String password;
+    private String createdAt;
+    private String updatedAt;
 
 
     public User(int id, String fullName, String email, String password, String createdAt, String updatedAt) {

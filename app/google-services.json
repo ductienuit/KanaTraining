@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1026887394558",
+    "firebase_url": "https://kana-training.firebaseio.com",
+    "project_id": "kana-training",
+    "storage_bucket": "kana-training.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026887394558:android:e332f6e5215865eb",
+        "android_client_info": {
+          "package_name": "com.nhombabon.kanatraining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026887394558-ds2ulq363t2s4essf9ef9glehcop0ng8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nhombabon.kanatraining",
+            "certificate_hash": "b161507216fd7ba394a87f9dba75c5a75fd7365d"
+          }
+        },
+        {
+          "client_id": "1026887394558-9qignspgavq1c41vj58pbqvnlvkqlhac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACPrAyqPQ01jW3ln3SlYNjtBfJsFuAFF4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026887394558-9qignspgavq1c41vj58pbqvnlvkqlhac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

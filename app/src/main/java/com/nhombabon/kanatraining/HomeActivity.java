@@ -20,7 +20,11 @@ public class HomeActivity extends AppCompatActivity {
 
     private Fragment selectedFragment = null;
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        moveTaskToBack(true);
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = item -> {

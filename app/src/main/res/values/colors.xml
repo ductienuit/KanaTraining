@@ -63,4 +63,6 @@
     <color name="purple">#8065d2</color>
     <color name="darkpurple">#7059b8</color>
     <color name="orange">#ea8630</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
