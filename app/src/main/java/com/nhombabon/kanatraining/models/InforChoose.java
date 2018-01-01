@@ -6,7 +6,7 @@ package com.nhombabon.kanatraining.models;
 
 public class InforChoose {
     private static InforChoose ourInstance = new InforChoose();
-    private static int isTurnOnSound=1;
+    private static int isStateSound=1;
     private static int chooseKana=0;
     private static int preChooseKana=0;
     private static int score=0;
@@ -21,12 +21,12 @@ public class InforChoose {
     private InforChoose() {
     }
 
-    public static int getIsTurnOnSound() {
-        return isTurnOnSound;
+    public static int getStateSound() {
+        return isStateSound;
     }
 
-    public static void setIsTurnOnSound(int isTurnOnSound) {
-        InforChoose.isTurnOnSound = isTurnOnSound;
+    public static void setStateSound(int isStateSound) {
+        InforChoose.isStateSound = isStateSound;
     }
 
     public static int getChooseKana() {

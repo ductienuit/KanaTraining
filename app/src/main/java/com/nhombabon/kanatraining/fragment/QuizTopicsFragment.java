@@ -64,6 +64,12 @@ public class QuizTopicsFragment extends Fragment {
                     InforChoose.setChooseKana(0);
                     checkKatakana.setChecked(false);
                 }
+                else
+                {
+                    //Chọn katakana
+                    InforChoose.setChooseKana(1);
+                    checkKatakana.setChecked(true);
+                }
             }
         });
 
@@ -76,6 +82,12 @@ public class QuizTopicsFragment extends Fragment {
                     //Chọn katakana
                     InforChoose.setChooseKana(1);
                     checkHiragana.setChecked(false);
+                }
+                else
+                {
+                    //Chọn katakana
+                    InforChoose.setChooseKana(0);
+                    checkHiragana.setChecked(true);
                 }
             }
         });

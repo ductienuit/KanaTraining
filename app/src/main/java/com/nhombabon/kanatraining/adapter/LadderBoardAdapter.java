@@ -20,7 +20,6 @@ public class LadderBoardAdapter extends RecyclerView.Adapter<LadderBoardAdapter.
 
     private static String TAG = LadderBoardAdapter.class.getSimpleName();
     private ArrayList<LadderProfile> mDataset;
-    private static MyClickListener myClickListener;
 
 
     public static class DataObjectHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -39,12 +38,7 @@ public class LadderBoardAdapter extends RecyclerView.Adapter<LadderBoardAdapter.
 
         @Override
         public void onClick(View v) {
-            myClickListener.onItemClick(getPosition(), v);
         }
-    }
-
-    public void setOnItemClickListener(MyClickListener myClickListener) {
-        this.myClickListener = myClickListener;
     }
 
     public LadderBoardAdapter(ArrayList<LadderProfile> myDataset) {
@@ -70,10 +64,6 @@ public class LadderBoardAdapter extends RecyclerView.Adapter<LadderBoardAdapter.
     @Override
     public int getItemCount() {
         return mDataset.size();
-    }
-
-    public interface MyClickListener {
-        public void onItemClick(int position, View v);
     }
 
 }

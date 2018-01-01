@@ -11,17 +11,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
 
 
 public class SettingsFragment extends Fragment {
 
+    private Switch setsound;
 
     public SettingsFragment() {
     }
@@ -32,9 +36,38 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         getActivity().setTitle("Settings");
 
+        setsound = (Switch) view.findViewById(R.id.setsound);
+
+        if(InforChoose.getStateSound()==0)
+            setsound.setChecked(false);
+        else
+            setsound.setChecked(true);
+
         initCustomSpinner(view);
 
+        addEvent();
+
         return view;
+    }
+
+    private void addEvent() {
+
+        setsound.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked)
+                {
+                    //Bật âm thanh
+                    InforChoose.setStateSound(1);
+                }
+                else
+                {
+                    //tắt âm thanh
+                    InforChoose.setStateSound(0);
+                }
+            }
+        });
+
     }
 
     private void initCustomSpinner(View view) {

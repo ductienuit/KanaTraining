@@ -303,6 +303,11 @@ public class KatakanaFragment extends Fragment {
     }
 
     public void loadVoice(String cha) {
+
+        if(InforChoose.getStateSound()==0)
+            return;
+
+
         //Gọi application để đọc file crv add vào list
         Common common;
         try {

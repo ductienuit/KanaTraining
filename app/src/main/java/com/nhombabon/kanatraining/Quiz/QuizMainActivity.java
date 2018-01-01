@@ -80,17 +80,8 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
 
 
-    class C01421 implements OnCompletionListener {
-        C01421() {
-        }
-
-        public void onCompletion(MediaPlayer mp) {
-            mp.release();
-        }
-    }
-
-    class C01432 extends TimerTask {
-        C01432() {
+    class LoadVoice extends TimerTask {
+        LoadVoice() {
         }
 
         public void run() {
@@ -98,8 +89,8 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         }
     }
 
-    class C01443 implements OnCompletionListener {
-        C01443() {
+    class ReleaseMedia implements OnCompletionListener {
+        ReleaseMedia() {
         }
 
         public void onCompletion(MediaPlayer mp) {
@@ -107,21 +98,12 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
         }
     }
 
-    class C01454 implements Runnable {
-        C01454() {
+    class CorrectEnd implements Runnable {
+        CorrectEnd() {
         }
 
         public void run() {
             QuizMainActivity.this.correctEnd();
-        }
-    }
-
-    class C01465 implements OnCompletionListener {
-        C01465() {
-        }
-
-        public void onCompletion(MediaPlayer mp) {
-            mp.release();
         }
     }
 
@@ -378,6 +360,9 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
     }
 
     private void loadVoice() {
+        if(InforChoose.getStateSound()==0)
+            return;
+
         String[] data = (String[]) ((Common) getApplication()).getCharDataList(this.mNowChar);
         if (this.mQuizType == 2) {
             String filename;
@@ -391,7 +376,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             AssetManager am = getAssets();
             this.mSoundId = -1;
             MediaPlayer player = getAssetsMediaFile(getResources(), filename);
-            player.setOnCompletionListener(new C01421());
+            player.setOnCompletionListener(new ReleaseMedia());
             player.start();
         }
     }
@@ -416,7 +401,7 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
 
         adjustStar();
         makeChoiceList();
-        new Timer().schedule(new C01432(), 1000);
+        new Timer().schedule(new LoadVoice(), 1000);
 
         ((TextView) findViewById(R.id.question_number)).setText(String.format("%d/%d", new Object[]{Integer.valueOf(this.mNowIndex + 1), Integer.valueOf(10)}));
 
@@ -600,28 +585,37 @@ public class QuizMainActivity extends AppBaseActivity implements AnimationListen
             this.mSeSoundId = -1;
 
 
+
+            //sound
             if (InforChoose.getChooseKana()==0)
                 player = getAssetsMediaFile(getResources(), "hiragana/music/crrect.ogg");
             else
                 player = getAssetsMediaFile(getResources(), "katakana/music/crrect.ogg");
 
+            if(InforChoose.getStateSound()==1) {
+                player.setOnCompletionListener(new ReleaseMedia());
+                player.start();
+            }
+            this.mHandler.postDelayed(new CorrectEnd(), 1000);
 
-            player.setOnCompletionListener(new C01443());
-            player.start();
-            this.mHandler.postDelayed(new C01454(), 1000);
+
+
+
+
             return;
         }
         this.mCoverView.setTag(Integer.toString(-1));
         this.mCoverView.setVisibility(View.VISIBLE);
         this.mMissView.setVisibility(View.VISIBLE);
         this.mMissCount++;
-        am = getAssets();
 
+        if(InforChoose.getStateSound()==1) {
         player = getAssetsMediaFile(getResources(), "hiragana/music/miss.ogg");
 
 
-        player.setOnCompletionListener(new C01465());
+        player.setOnCompletionListener(new ReleaseMedia());
         player.start();
+        }
         this.mHandler.postDelayed(new Runnable() {
             public void run() {
                 QuizMainActivity.this.missEnd(answerChar);

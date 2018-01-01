@@ -5,6 +5,15 @@
     <string name="second_description">Compete with your peers and show off with your result</string>
     <string name="third_description">Educative and addictive quiz game for you</string>
 
+
+    <string name="QuizResult_Clear1">Perfect!</string>
+    <string name="QuizResult_Clear2">Good!</string>
+    <string name="QuizResult_Clear3">You can do it!</string>
+    <string name="QuizResult_Score">Score</string>
+    <string name="QuizResult_BestTime">BestTime</string>
+    <string name="QuizResult_Button2">Try Again</string>
+    <string name="QuizResult_Button1">Quiz Menu</string>
+
     <string name="facebook_app_id">1972715876321373</string>
     <string name="fb_login_protocol_scheme">fb1972715876321373</string>
 

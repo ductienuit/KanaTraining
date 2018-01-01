@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.R;
+import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -303,6 +304,8 @@ public class HiraganaFragment extends Fragment {
 
     public void loadVoice(String cha) {
 
+        if(InforChoose.getStateSound()==0)
+            return;
         //Gọi application để đọc file crv add vào list
         Common common;
         try {
