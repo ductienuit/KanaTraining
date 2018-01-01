@@ -1,4 +1,4 @@
-package com.nhombabon.kanatraining.view;
+package com.nhombabon.kanatraining.utils;
 
 import android.content.Context;
 import android.os.Handler;
@@ -8,8 +8,12 @@ import android.widget.HorizontalScrollView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class ObsHorizontalScrollView extends HorizontalScrollView {
-    private Handler mHandler = new Handler();
+
+/**
+ * Created by DucTien on 01/01/2018.
+ */
+
+public class KanaHorizontalScrollView extends HorizontalScrollView {private Handler mHandler = new Handler();
     private boolean mIsChanged;
     private boolean mIsScrolling;
     private int mPrevScrollX;
@@ -19,9 +23,9 @@ public class ObsHorizontalScrollView extends HorizontalScrollView {
     private Timer mTimer = null;
 
     public interface ObsHorizontalScrollListener {
-        void onScrollChanged(ObsHorizontalScrollView obsHorizontalScrollView, int i, int i2, int i3, int i4);
+        void onScrollChanged(KanaHorizontalScrollView KanaHorizontalScrollView, int i, int i2, int i3, int i4);
 
-        void onScrollEnd(ObsHorizontalScrollView obsHorizontalScrollView);
+        void onScrollEnd(KanaHorizontalScrollView KanaHorizontalScrollView);
     }
 
     class ObsScrollTask extends TimerTask {
@@ -31,19 +35,19 @@ public class ObsHorizontalScrollView extends HorizontalScrollView {
             }
 
             public void run() {
-                if (ObsHorizontalScrollView.this.mIsChanged) {
-                    ObsHorizontalScrollView.this.mScrollEndCount = 0;
+                if (KanaHorizontalScrollView.this.mIsChanged) {
+                    KanaHorizontalScrollView.this.mScrollEndCount = 0;
                 } else {
-                    ObsHorizontalScrollView access$0 = ObsHorizontalScrollView.this;
+                    KanaHorizontalScrollView access$0 = KanaHorizontalScrollView.this;
                     access$0.mScrollEndCount = access$0.mScrollEndCount + 1;
-                    if (ObsHorizontalScrollView.this.mScrollEndCount >= 3 && ObsHorizontalScrollView.this.mIsScrolling) {
-                        ObsHorizontalScrollView.this.mIsScrolling = false;
-                        if (ObsHorizontalScrollView.this.mScrollListener != null) {
-                            ObsHorizontalScrollView.this.mScrollListener.onScrollEnd(ObsHorizontalScrollView.this);
+                    if (KanaHorizontalScrollView.this.mScrollEndCount >= 3 && KanaHorizontalScrollView.this.mIsScrolling) {
+                        KanaHorizontalScrollView.this.mIsScrolling = false;
+                        if (KanaHorizontalScrollView.this.mScrollListener != null) {
+                            KanaHorizontalScrollView.this.mScrollListener.onScrollEnd(KanaHorizontalScrollView.this);
                         }
                     }
                 }
-                ObsHorizontalScrollView.this.mIsChanged = false;
+                KanaHorizontalScrollView.this.mIsChanged = false;
             }
         }
 
@@ -51,21 +55,21 @@ public class ObsHorizontalScrollView extends HorizontalScrollView {
         }
 
         public void run() {
-            ObsHorizontalScrollView.this.mHandler.post(new C01531());
+            KanaHorizontalScrollView.this.mHandler.post(new C01531());
         }
     }
 
-    public ObsHorizontalScrollView(Context context) {
+    public KanaHorizontalScrollView(Context context) {
         super(context);
         init();
     }
 
-    public ObsHorizontalScrollView(Context context, AttributeSet attrs) {
+    public KanaHorizontalScrollView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public ObsHorizontalScrollView(Context context, AttributeSet attrs, int defs) {
+    public KanaHorizontalScrollView(Context context, AttributeSet attrs, int defs) {
         super(context, attrs, defs);
         init();
     }

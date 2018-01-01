@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/illust_main_root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context="com.nhombabon.kanatraining.IllustMainActivity">
+
+    <com.nhombabon.kanatraining.utils.KanaHorizontalScrollView
+        android:id="@+id/illust_main_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/illust_main_scroll_inner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/illust_main_left_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="10dp"
+>
+
+                <LinearLayout
+                    android:id="@+id/illust_main_left_arrow_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/illust_main_left_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_mark01" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_l_01" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!--Hiện nội dung gồm ký tự nhật, ký tự english, cái hình và miêu tả-->
+            <include layout="@layout/illust_main_detail" />
+
+
+            <!--Giao diện khi kéo qua bên phải. để ý thấy cái nút mũi tên-->
+            <RelativeLayout
+                android:id="@+id/illust_main_right_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp">
+
+
+                <LinearLayout
+                    android:id="@+id/illust_main_right_arrow_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/arrow_r_01" />
+
+                    <ImageView
+                        android:id="@+id/illust_main_right_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_mark01" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.nhombabon.kanatraining.utils.KanaHorizontalScrollView>
+
+
+
+    <!--//Tiêu đề và nút back-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <include layout="@layout/navi_bar_white" />
+    </RelativeLayout>
+
+
+
+    <!--Chức năng như chuyển sang list, cho chạy miêu tả,
+    âm thanh và quay ngược-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/chart_list_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_weight="1.0"
+            android:onClick="ClickChartList"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_illust_syllabary" />
+
+        <ImageView
+            android:id="@+id/movie_start_button"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:onClick="clickMovieStart"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_illust_playback" />
+
+        <ImageView
+            android:id="@+id/voice_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_weight="1.0"
+            android:onClick="clickVoice"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_illust_voice" />
+
+        <ImageView
+            android:id="@+id/illust_text_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_weight="1.0"
+            android:onClick="ClickIllustText"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/btn_illust_reverse" />
+    </LinearLayout>
+
+
+
+<!--//Pop up khi hết list-->
+    <include
+        android:visibility="gone"
+        android:id="@+id/illust_last_pop"
+        layout="@layout/illust_last_pop" />
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Popup khi het mieu ta trong selectillust-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+    <!--android:background="@color/black"-->
+    <!--Nếu muốn xem thì xóa comment ở trên rồi paste vào trong > -->
+
+    <RelativeLayout
+        android:id="@+id/pop_quiz_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/pop_blur_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/navi_bar_white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/btn_pop_button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_frame02"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clickPopNextRow"
+                    android:text="@string/IllustEndPop_Button1"
+                    android:textColor="@drawable/color_white_alpha"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/btn_pop_button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_frame02"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clickPopSeeAgain"
+                    android:text="@string/IllustEndPop_Button2"
+                    android:textColor="@drawable/color_white_alpha"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/btn_pop_button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_frame02"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="clickPopBackToTop"
+                    android:text="@string/IllustEndPop_Button3"
+                    android:textColor="@drawable/color_white_alpha"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

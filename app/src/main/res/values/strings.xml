@@ -118,4 +118,11 @@
     <string name="QuizAnswer_ViewName2">Choose the Hiragana</string>
     <string name="QuizAnswer_ViewName3">Listen &amp; Choose</string>
     <string name="QuizAnswer_ViewName4">Similar Hiragana</string>
+
+
+    <string name="IllustTextPop_ViewName">Memory Hints</string>
+    <string name="IllustEndPop_ViewName">Memory Hints</string>
+    <string name="IllustEndPop_Button1">Go to next row</string>
+    <string name="IllustEndPop_Button2">See again</string>
+    <string name="IllustEndPop_Button3">Back to top</string>
 </resources>

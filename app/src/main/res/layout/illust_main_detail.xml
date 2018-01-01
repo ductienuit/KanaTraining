@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/illust_main_base_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1.0"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp">
+
+        <LinearLayout
+            android:id="@+id/text_beans_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_bean01"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/text_hiragana"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="あ"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text_type_en"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:text="a"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/illust_center_circle"
+            android:layout_width="@dimen/_265sdp"
+            android:layout_height="@dimen/_265sdp"
+            android:layout_margin="0dp"
+            android:background="@drawable/bg_cycle01"
+            android:onClick="clickCenterImageTest"
+            android:scaleType="centerInside"
+            >
+
+            <RelativeLayout
+                android:id="@+id/illust_center_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/illust_back_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:text="あ"
+                    android:textColor="@color/black"
+                    android:textSize="150sp"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/illust_back_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/he_1"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/illust_center_front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/illust_front_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="あ"
+                    android:textColor="@color/black"
+                    android:textSize="150sp"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/change_illust"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/he_1" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+        <!--//Thêm dòng dưới vào sẽ thấy chữ-->
+        <!--android:background="@color/black"-->
+        <TextView
+            android:background="@color/black"
+            android:id="@+id/text_type_catch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Ah! There is a snake!"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </LinearLayout>
+</RelativeLayout>
