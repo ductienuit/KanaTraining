@@ -162,12 +162,11 @@ public class LoginOptionActivity extends BaseActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            showToast("Authentication Success");
+                            //showToast("Authentication Success");
                             startActivity(new Intent(LoginOptionActivity.this, HomeActivity.class));
                         } else {
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(LoginOptionActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_LONG).show();
+                            showToast("Authentication failed." + task.getException().getMessage());
                         }
 
                         // [START_EXCLUDE]
@@ -193,8 +192,7 @@ public class LoginOptionActivity extends BaseActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            Toast.makeText(LoginOptionActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            showToast("Authentication failed." + task.getException().getMessage());
                         }
 
                         // [START_EXCLUDE]
