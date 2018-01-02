@@ -63,7 +63,7 @@ public class MainActivity extends AhoyOnboarderActivity {
 
     @Override
     public void onFinishButtonPressed() {
-        Intent showSignUpIntent = new Intent(MainActivity.this, HomeActivity.class);
+        Intent showSignUpIntent = new Intent(MainActivity.this, LoginOptionActivity.class);
         startActivity(showSignUpIntent);
     }
 
