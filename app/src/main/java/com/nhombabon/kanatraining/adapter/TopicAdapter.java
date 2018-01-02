@@ -21,6 +21,8 @@ import com.nhombabon.kanatraining.models.QuizObject;
 
 import java.util.List;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
+
 public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
 
     private Context context;
