@@ -33,13 +33,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".LoginOptionActivity"
             android:launchMode="singleTop"
@@ -77,6 +76,7 @@
             android:launchMode="singleTop"
             android:theme="@style/AppThemeFullScreen"
             android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".IntroActivity"></activity>
         <activity android:name=".illust.IllustMainActivity" />
         <activity android:name=".illust.IllustSelectListActivity" />
         <activity android:name=".illust.IllustSelectTypeActivity"></activity>
