@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green"
-    tools:context="com.nhombabon.kanatraining.IllustMainActivity">
+    tools:context="com.nhombabon.kanatraining.illust.IllustMainActivity">
 
     <com.nhombabon.kanatraining.utils.KanaHorizontalScrollView
         android:id="@+id/illust_main_scroll_view"
@@ -148,18 +148,6 @@
             android:paddingRight="5dp"
             android:scaleType="centerInside"
             android:src="@drawable/btn_illust_voice" />
-
-        <ImageView
-            android:id="@+id/illust_text_button"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_weight="1.0"
-            android:onClick="ClickIllustText"
-            android:paddingTop="@dimen/_3sdp"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/btn_illust_reverse" />
     </LinearLayout>
 
 

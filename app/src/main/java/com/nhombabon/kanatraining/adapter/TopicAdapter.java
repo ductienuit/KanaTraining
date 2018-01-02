@@ -13,6 +13,10 @@ import android.widget.TextView;
 import com.nhombabon.kanatraining.AppConfig;
 import com.nhombabon.kanatraining.LoginActivity;
 import com.nhombabon.kanatraining.Quiz.QuizSelectListActivity;
+import com.nhombabon.kanatraining.illust.IllustMainActivity;
+import com.nhombabon.kanatraining.illust.IllustSelectListActivity;
+import com.nhombabon.kanatraining.illust.IllustSelectTypeActivity;
+import com.nhombabon.kanatraining.models.Common;
 import com.nhombabon.kanatraining.models.QuizObject;
 
 import java.util.List;
@@ -72,6 +76,26 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicViewHolder>{
                     Intent it = new Intent();
                     it.putExtra(AppConfig.SELECTED_QUIZ, 3);
                     it.setClass(context, QuizSelectListActivity.class);
+                    context.startActivity(it);
+                }
+                else if(quizObject.getQuizName()=="Illustrations")
+                {
+                    Intent it = new Intent();
+                    it.setClass(context, IllustSelectTypeActivity.class);
+                    context.startActivity(it);
+                }
+                else if( quizObject.getQuizName()=="Illustrations one by one")
+                {
+                    Intent it = new Intent();
+                    it.putExtra(AppConfig.SELECTED_ILLUST, 0);
+                    //it.putExtra(AppConfig.SELECTED_CHAR, (String) common.mColKeyList.get(0));
+                    it.setClass(context, IllustMainActivity.class);
+                    context.startActivity(it);
+                }
+                else if( quizObject.getQuizName()=="Illustrations row by row")
+                {
+                    Intent it = new Intent();
+                    it.setClass(context, IllustSelectListActivity.class);
                     context.startActivity(it);
                 }
         }

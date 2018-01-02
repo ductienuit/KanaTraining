@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 
 import com.codemybrainsout.onboarder.AhoyOnboarderActivity;
 import com.codemybrainsout.onboarder.AhoyOnboarderCard;
+import com.nhombabon.kanatraining.illust.IllustMainActivity;
 import com.nhombabon.kanatraining.models.InforChoose;
 
 import java.util.ArrayList;
@@ -62,7 +63,7 @@ public class MainActivity extends AhoyOnboarderActivity {
 
     @Override
     public void onFinishButtonPressed() {
-        Intent showSignUpIntent = new Intent(MainActivity.this, LoginOptionActivity.class);
+        Intent showSignUpIntent = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(showSignUpIntent);
     }
 

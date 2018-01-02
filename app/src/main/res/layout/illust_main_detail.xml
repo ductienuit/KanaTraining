@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_weight="1.0"
+    android:layout_marginBottom="@dimen/_40sdp"
     android:orientation="vertical"
     >
 
@@ -14,13 +15,13 @@
         android:gravity="center"
         android:orientation="vertical"
         android:paddingBottom="10dp"
-        android:paddingTop="5dp">
+        android:paddingTop="15dp">
 
         <LinearLayout
             android:id="@+id/text_beans_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/bg_bean01"
             android:orientation="horizontal">
             <TextView
@@ -48,12 +49,13 @@
 
         <RelativeLayout
             android:id="@+id/illust_center_circle"
-            android:layout_width="@dimen/_265sdp"
-            android:layout_height="@dimen/_265sdp"
+            android:layout_width="@dimen/_270sdp"
+            android:layout_height="@dimen/_270sdp"
             android:layout_margin="0dp"
             android:background="@drawable/bg_cycle01"
             android:onClick="clickCenterImageTest"
             android:scaleType="centerInside"
+            android:layout_marginBottom="@dimen/_100sdp"
             >
 
             <RelativeLayout

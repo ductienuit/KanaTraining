@@ -46,6 +46,7 @@ public class AppConfig {
     public static final String SELECTED_CHART = "selected_chart";
     public static final String SELECTED_ILLUST = "selected_illust";
     public static final String SELECTED_QUIZ = "selected_quiz";
+    public static final String SELECTED_HOME = "selected_home";
     public static final int TOTAL_QUIZ_COUNT = 10;
     public static final boolean USE_LOG = false;
 }

@@ -120,9 +120,12 @@
     <string name="QuizAnswer_ViewName4">Similar Hiragana</string>
 
 
-    <string name="IllustTextPop_ViewName">Memory Hints</string>
-    <string name="IllustEndPop_ViewName">Memory Hints</string>
+    <string name="IllustDetail_ViewName">Kana Training</string>
+    <string name="IllustTextPop_ViewName">Kana Training</string>
+    <string name="IllustEndPop_ViewName">Kana Training</string>
     <string name="IllustEndPop_Button1">Go to next row</string>
     <string name="IllustEndPop_Button2">See again</string>
     <string name="IllustEndPop_Button3">Back to top</string>
+
+    <string name="SelectLine_ViewName">Kana Training</string>
 </resources>

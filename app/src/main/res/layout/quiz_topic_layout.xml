@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_read" />
+            android:src="@drawable/ic_illust" />
         <TextView
             android:id="@+id/selected_quiz_name"
             android:layout_width="wrap_content"

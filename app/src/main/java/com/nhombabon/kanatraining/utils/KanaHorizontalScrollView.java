@@ -4,25 +4,20 @@ import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.widget.HorizontalScrollView;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-/**
- * Created by DucTien on 01/01/2018.
- */
-
-public class KanaHorizontalScrollView extends HorizontalScrollView {private Handler mHandler = new Handler();
+public class KanaHorizontalScrollView extends HorizontalScrollView {
+    private Handler mHandler = new Handler();
     private boolean mIsChanged;
     private boolean mIsScrolling;
     private int mPrevScrollX;
     private int mScrollEndCount;
     private final int mScrollEndCountMax = 3;
-    private ObsHorizontalScrollListener mScrollListener = null;
+    private KanaHorizontalScrollListener mScrollListener = null;
     private Timer mTimer = null;
 
-    public interface ObsHorizontalScrollListener {
+    public interface KanaHorizontalScrollListener {
         void onScrollChanged(KanaHorizontalScrollView KanaHorizontalScrollView, int i, int i2, int i3, int i4);
 
         void onScrollEnd(KanaHorizontalScrollView KanaHorizontalScrollView);
@@ -86,7 +81,7 @@ public class KanaHorizontalScrollView extends HorizontalScrollView {private Hand
         super.scrollTo(x, y);
     }
 
-    public void setOnScrollListener(ObsHorizontalScrollListener scrollListener) {
+    public void setOnScrollListener(KanaHorizontalScrollListener scrollListener) {
         this.mScrollListener = scrollListener;
     }
 

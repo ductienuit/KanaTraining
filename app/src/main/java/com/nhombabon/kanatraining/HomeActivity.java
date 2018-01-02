@@ -1,11 +1,13 @@
 package com.nhombabon.kanatraining;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.nhombabon.kanatraining.fragment.AlphabetFragment;
@@ -13,12 +15,14 @@ import com.nhombabon.kanatraining.fragment.HomeFragment;
 import com.nhombabon.kanatraining.fragment.LadderBoardFragment;
 import com.nhombabon.kanatraining.fragment.QuizTopicsFragment;
 import com.nhombabon.kanatraining.fragment.SettingsFragment;
+import com.nhombabon.kanatraining.models.Common;
 
 public class HomeActivity extends AppCompatActivity {
 
     private static final String TAG = HomeActivity.class.getSimpleName();
 
     private Fragment selectedFragment = null;
+    private int mHomeType;
 
     @Override
     public void onBackPressed() {
@@ -57,12 +61,46 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        selectedFragment = new QuizTopicsFragment();
+        Intent intent = getIntent();
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+
+        Common common;
+        try {
+            common = (Common) getApplication();
+        } catch (Exception e) {
+            e.printStackTrace();
+            common = (Common) getApplication();
+        }
+        if (common.getmCharDataList() == null) {
+            Log.e("common.mCharDataList", "null");
+            common.init();
+        }
+
+
+        this.mHomeType = intent.getIntExtra(AppConfig.SELECTED_HOME, 0);
+
+        switch (mHomeType)
+        {
+            case 0:
+            {
+                selectedFragment = new QuizTopicsFragment();
+               navigation.setSelectedItemId(R.id.quiz_mart);
+                break;
+            }
+            case 3:
+            {
+                selectedFragment = new AlphabetFragment();
+                navigation.setSelectedItemId(R.id.alphabet);
+                break;
+            }
+        }
+
         FragmentTransaction transactions = getSupportFragmentManager().beginTransaction();
         transactions.replace(R.id.content, selectedFragment);
         transactions.commit();
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
