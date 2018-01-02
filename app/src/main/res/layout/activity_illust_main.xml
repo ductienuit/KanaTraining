@@ -52,7 +52,9 @@
 
 
             <!--Hiện nội dung gồm ký tự nhật, ký tự english, cái hình và miêu tả-->
-            <include layout="@layout/illust_main_detail" />
+            <include layout="@layout/illust_main_detail">
+
+            </include>
 
 
             <!--Giao diện khi kéo qua bên phải. để ý thấy cái nút mũi tên-->
