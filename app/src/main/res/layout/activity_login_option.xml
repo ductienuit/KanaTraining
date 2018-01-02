@@ -24,7 +24,7 @@
                 android:layout_width="@dimen/_110sdp"
                 android:layout_height="@dimen/_110sdp"
                 android:layout_gravity="center"
-                android:src="@drawable/bookone"
+                android:src="@drawable/app"
                 android:contentDescription="logo"/>
 
             <TextView
@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_12sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="@string/first_title"
+                android:text="@string/app_name"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_22sdp" />
 

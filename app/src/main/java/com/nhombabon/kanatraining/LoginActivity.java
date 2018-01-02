@@ -38,9 +38,6 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-    //        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-    //        if (firebaseUser != null)
-    //            startActivity(new Intent(this, HomeActivity.class));
     }
 
     @Override

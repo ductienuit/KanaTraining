@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">Kana Training</string>
-    <string name="first_title">Kana Training</string>
+    <string name="first_title">Easy to Use</string>
+    <string name="second_title">Interesting</string>
+    <string name="third_title">Illustrations Ideas</string>
     <string name="first_description">Learning made easy through fun</string>
-    <string name="second_description">Compete with your peers and show off with your result</string>
-    <string name="third_description">Educative and addictive quiz game for you</string>
+    <string name="second_description">Educative and addictive quiz game for you</string>
+    <string name="third_description">Illustrations so fun and interesting</string>
 
 
     <string name="QuizResult_Clear1">Perfect!</string>
